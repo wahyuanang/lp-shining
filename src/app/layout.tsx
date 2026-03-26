@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "SHINING | Learn English with Song Lyrics",
   description: "SHINING adalah platform pembelajaran Bahasa Inggris berbasis lagu (song lyrics) yang membantu siswa memahami kosa kata, makna lirik, dan pesan moral melalui aktivitas interaktif.",
+  icons: {
+    icon: "/logo_img.png",
+  },
 };
 
 export default function RootLayout({
