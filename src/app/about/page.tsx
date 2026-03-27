@@ -125,14 +125,12 @@ export default function About() {
                 <div className="absolute inset-2 bg-gradient-to-br from-slate-200 to-slate-400 rounded-[2.5rem] overflow-hidden shadow-2xl flex items-center justify-center bg-gray-300">
                    {/* Placeholder Icon */}
                    <User size={100} className="text-gray-400 opacity-50 absolute" />
-                   {/* Image will be un-commented or replaced by the real one later
                    <Image 
-                     src="/images/sripuja.jpg" 
+                     src="/profile.jpeg" 
                      alt="Sri Puja" 
                      fill 
                      className="object-cover transition-transform duration-500 group-hover:scale-105" 
                    /> 
-                   */}
                 </div>
                 {/* Floating Role Badge */}
                 <div className="absolute -bottom-6 -right-6 bg-shining-yellow text-shining-dark font-black px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 rotate-12 group-hover:scale-110 transition-transform">

@@ -100,10 +100,10 @@ export default function Home() {
             <div className="absolute inset-0 rounded-[3rem] w-full h-full bg-white/40 blur-xl group-hover:blur-2xl transition-all" />
             <div className="relative w-full h-full rounded-[2.8rem] overflow-hidden bg-white shadow-2xl -skew-y-2 transition-transform duration-500 group-hover:scale-[1.02]">
                <Image 
-                 src="/hero_img.png" 
+                 src="/img-hero.png" 
                  alt="Students learning with music" 
                  fill
-                 className="object-cover"
+                 className="object-fit"
                  priority
                />
             </div>

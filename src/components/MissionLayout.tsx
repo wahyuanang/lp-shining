@@ -9,6 +9,12 @@ import confetti from "canvas-confetti";
 export interface Vocabulary {
   word: string;
   meaning: string;
+  pronunciation?: string;
+}
+
+export interface LyricLine {
+  english: string;
+  translation: string;
 }
 
 interface MissionLayoutProps {
@@ -17,9 +23,10 @@ interface MissionLayoutProps {
   youtubeId: string;
   vocabulary: Vocabulary[];
   quizEmbedUrl: string;
+  lyrics?: LyricLine[];
 }
 
-export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl }: MissionLayoutProps) {
+export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics }: MissionLayoutProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -169,10 +176,23 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
            <div className="grid md:grid-cols-2 gap-6">
              {/* Lyrics Column */}
              <div className="bg-white rounded-[2rem] p-6 shadow-sm border border-gray-100 flex flex-col h-[500px]">
-                <h3 className="text-lg font-bold text-shining-dark mb-4 border-b pb-3">Song Lyrics</h3>
-                <div className="flex-1 overflow-y-auto pr-4 text-slate-600 leading-loose">
-                  <p className="italic text-center mt-20 opacity-50">Sing along with the video!</p>
-                  {/* Lyrics will be inserted here */}
+                <h3 className="text-lg font-bold text-shining-dark mb-4 border-b pb-3 flex items-center justify-between">
+                  Song Lyrics
+                  <span className="text-sm font-normal text-slate-400">Scroll to read</span>
+                </h3>
+                <div className="flex-1 overflow-y-auto pr-4 text-slate-600">
+                  {lyrics && lyrics.length > 0 ? (
+                    <div className="flex flex-col gap-3 pb-6">
+                      {lyrics.map((line, idx) => (
+                        <div key={idx} className="p-3 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100 transition-colors">
+                          <p className="font-semibold text-slate-800 text-lg">{line.english}</p>
+                          <p className="text-slate-500 text-sm mt-1">{line.translation}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="italic text-center mt-20 opacity-50">Sing along with the video!</p>
+                  )}
                 </div>
              </div>
 
@@ -183,7 +203,10 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                    {vocabulary.length > 0 ? vocabulary.map((item, idx) => (
                      <div key={idx} className="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-colors group">
                         <div>
-                          <p className="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">{item.word}</p>
+                          <p className="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors flex items-center flex-wrap gap-2">
+                            {item.word} 
+                            {item.pronunciation && <span className="text-sm font-medium text-emerald-600/70 bg-emerald-100/50 px-2 py-0.5 rounded-full">{item.pronunciation}</span>}
+                          </p>
                           <p className="text-slate-500 text-sm mt-1">{item.meaning}</p>
                         </div>
                         {/* Audio play button */}
