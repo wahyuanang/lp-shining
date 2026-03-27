@@ -377,7 +377,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                           value={testiName}
                           onChange={(e) => setTestiName(e.target.value)}
                           placeholder="e.g. John Doe"
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                          className="w-full px-4 py-3 text-black rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
                         />
                       </div>
                       <div>
@@ -388,7 +388,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                           onChange={(e) => setTestiMessage(e.target.value)}
                           placeholder="How was the learning experience? What new words did you learn?"
                           rows={4}
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all resize-none"
+                          className="w-full px-4 py-3 text-black rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all resize-none"
                         />
                       </div>
                       <button 

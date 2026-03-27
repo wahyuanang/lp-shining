@@ -103,7 +103,7 @@ export default function Home() {
                  src="/img-hero.png" 
                  alt="Students learning with music" 
                  fill
-                 className="object-fit"
+                 className="object-cover"
                  priority
                />
             </div>
