@@ -374,7 +374,7 @@ export default function Home() {
                Hear from students who transformed their English learning journey using SHINING map levels.
              </motion.p>
           </div>
-          <motion.div variants={fadeInUp} className="mt-8 md:mt-0">
+          <motion.div variants={fadeInUp} className="mt-8 md:mt-0 flex flex-col items-end">
              <div className="flex -space-x-4">
                 {[1,2,3,4].map(num => (
                   <div key={num} className="w-12 h-12 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center font-bold text-slate-500 shadow-sm text-sm">
@@ -385,6 +385,19 @@ export default function Home() {
                   99+
                 </div>
              </div>
+             <button 
+               onClick={() => {
+                 localStorage.removeItem("shining_testimonials");
+                 setTestimonials([
+                   { name: "Sarah K.", level: "Medium", text: "Belajar bahasa Inggris jadi nggak ngebosenin lagi. Aku suka banget fitur quiz dari lirik lagu kesukaanku!" },
+                   { name: "Andi R.", level: "Easy", text: "Dulu susah ngafalin vocab baru, sekarang gampang karena sering dengar lagunya. Keren banget platform ini!" },
+                 ]);
+               }}
+               className="mt-4 text-xs font-semibold text-rose-500 hover:text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-full transition-colors"
+               title="Admin tool for testing: clear local storage"
+             >
+               Reset Testimonials
+             </button>
           </motion.div>
         </motion.div>
 

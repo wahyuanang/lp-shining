@@ -143,11 +143,11 @@ export default function About() {
              {/* Profile Detail */}
              <div className="text-center lg:text-left flex-1 text-white">
                 <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
-                   <GraduationCap size={14} /> English Education Media
+                   <GraduationCap size={14} /> Educational Technology, UNY
                 </motion.div>
                 
                 <motion.h2 variants={fadeInUp} className="text-5xl lg:text-7xl font-title text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 tracking-wide mb-2 drop-shadow-md">
-                  Sri Puja
+                  Sri Puja Yanti
                 </motion.h2>
                 
                 <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
@@ -160,7 +160,7 @@ export default function About() {
                   {/* Quote Icon Background */}
                   <span className="absolute -top-6 -left-6 text-6xl text-white/5 font-serif font-black">"</span>
                   <p className="text-white/90 text-xl lg:text-2xl italic leading-relaxed font-medium">
-                    "Saya percaya bahwa pendidikan tidak seharusnya kaku. Jika seorang siswa bisa menghafal lirik lagu favoritnya dengan sukacita, mengapa tidak memanfaatkan harmoni tersebut untuk mengajarkan tatanan bahasa dan kosakata? Bahasa Inggris itu mudah, indah, dan bisa sangat menyenangkan."
+                    "Saya percaya bahwa pendidikan tidak seharusnya kaku. Jika siswa bisa dengan mudah menghafal lirik lagu favoritnya dan sangat antusias menyelesaikan tantangan sebuah game, mengapa energi itu tidak kita satukan? Platform ini saya rancang untuk menggabungkan harmoni musik dan keseruan bermain. Di sini, menguasai kosakata dan tata bahasa Inggris bukan lagi beban hafalan, melainkan sebuah pembelajaran yang menyenangkan."
                   </p>
                 </motion.div>
                 
