@@ -207,8 +207,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                 <h3 className="text-lg font-bold text-shining-dark mb-4 border-b pb-3 text-emerald-600">New Vocabulary</h3>
                 <div className="flex-1 overflow-y-auto pr-2 flex flex-col gap-3">
                    {vocabulary.length > 0 ? vocabulary.map((item, idx) => (
-                     <div key={idx} className="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-colors group">
-                        <div>
+                     <div key={idx} className="flex items-start justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/50 transition-colors group gap-3">
+                        <div className="flex-1 min-w-0">
                           <p className="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors flex items-center flex-wrap gap-2">
                             {item.word} 
                             {item.pronunciation && <span className="text-sm font-medium text-emerald-600/70 bg-emerald-100/50 px-2 py-0.5 rounded-full">{item.pronunciation}</span>}
@@ -218,7 +218,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                         {/* Audio play button */}
                         <button 
                           onClick={() => playAudio(item.word)}
-                          className="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-emerald-500 hover:bg-emerald-500 hover:text-white transition-all transform hover:scale-110 active:scale-95"
+                          className="w-10 h-10 shrink-0 self-start mt-1 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-emerald-500 hover:bg-emerald-500 hover:text-white transition-all transform hover:scale-110 active:scale-95"
                           title="Tirukan pengucapannya!"
                         >
                            <Play size={16} className="ml-0.5" />
