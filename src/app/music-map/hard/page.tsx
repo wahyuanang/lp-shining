@@ -84,7 +84,7 @@ const runawayLyrics: LyricLine[] = [
 const hardGames: Game[] = [
   {
     title: "Whack-a-Mole",
-    instruction: "Hit the mole holding the EXACT word from AURORA's song! Watch out, some words look and sound similar, but they are traps. Be fast and accurate! (Pukul tikus mondok yang membawa kata yang TEPAT dari lagu AURORA! Hati-hati, beberapa kata terlihat dan terdengar mirip, tapi itu adalah jebakan. Cepat dan akuratlah!)",
+    instruction: "Hit the mole holding the EXACT word from Runaway song! Watch out, some words look and sound similar, but they are traps. Be fast and accurate! (Pukul tikus mondok yang membawa kata yang TEPAT dari lagu Runaway! Hati-hati, beberapa kata terlihat dan terdengar mirip, tapi itu adalah jebakan. Cepat dan akuratlah!)",
     embedUrl: "https://wordwall.net/embed/play/110320/968/587"
   },
   {

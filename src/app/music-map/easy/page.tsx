@@ -80,6 +80,9 @@ export default function EasyMission() {
       quizEmbedUrl="https://wayground.com/join?gc=28341822&source=liveDashboard"
       lyrics={countOnMeLyrics}
       games={countOnMeGames}
+      nextLevel="Medium"
+      nextLevelHref="/music-map/medium"
+      nextSongTitle="You'll Be In My Heart"
     />
   );
 }

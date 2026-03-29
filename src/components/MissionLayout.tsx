@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper } from "lucide-react";
+import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
@@ -30,9 +30,12 @@ interface MissionLayoutProps {
   quizEmbedUrl: string;
   lyrics?: LyricLine[];
   games?: Game[];
+  nextLevel?: "Medium" | "Hard";
+  nextLevelHref?: string;
+  nextSongTitle?: string;
 }
 
-export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games }: MissionLayoutProps) {
+export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games, nextLevel, nextLevelHref, nextSongTitle }: MissionLayoutProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -336,8 +339,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                 </h3>
                 <p className="text-slate-600 max-w-md mx-auto mb-8">
                   {alreadyClaimed 
-                    ? "Kamu telah menyelesaikan misi ini dengan luar biasa! Testimonimu sudah dibagikan di halaman utama." 
-                    : "Jika kamu selesai menonton, mempelajari kosakata, dan menyelesaikan kuis... waktunya hadiahmu!"}
+                    ? "Kamu telah menyelesaikan misi ini dengan sangat baik! Testimoni kamu kini ditampilkan di halaman utama." 
+                    : "Setelah menonton, mempelajari kosakata, dan menyelesaikan kuis di atas, kini saatnya kamu mengklaim hadiahmu."}
                 </p>
                 
                 <button 
@@ -360,6 +363,87 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-shining-yellow/30 blur-3xl rounded-full pointer-events-none" />
            </div>
         </section>
+
+        {/* 6. NEXT LEVEL / COMPLETION BANNER — only shown after testimonial is claimed */}
+        <AnimatePresence>
+          {alreadyClaimed && nextLevel && nextLevelHref && (
+            <motion.section
+              key="next-level-banner"
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+              className="mb-20"
+            >
+              <div className="relative bg-gradient-to-br from-shining-dark via-shining-purple to-shining-dark rounded-[2.5rem] p-8 lg:p-12 overflow-hidden shadow-2xl text-white text-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-shining-yellow/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-shining-violet/20 blur-[80px] rounded-full pointer-events-none" />
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-shining-yellow text-sm font-bold uppercase tracking-wider mb-6">
+                    <Sparkles size={14} /> Up Next
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">Ready for the Next Challenge?</h3>
+                  <p className="text-white/70 max-w-md mx-auto mb-8">
+                    Selamat! Kamu sudah menyelesaikan level <span className="text-shining-yellow font-bold">{level}</span>. Saatnya naik ke level <span className="font-bold text-white">{nextLevel}</span> dengan lagu <span className="italic text-shining-yellow">&quot;{nextSongTitle}&quot;</span>!
+                  </p>
+                  <Link
+                    href={nextLevelHref}
+                    className="group inline-flex items-center gap-3 px-8 py-4 bg-shining-yellow text-shining-dark rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_-5px_rgba(252,211,77,0.6)] hover:shadow-[0_0_40px_-5px_rgba(252,211,77,0.8)]"
+                  >
+                    Go to {nextLevel} Level
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
+
+        {/* 6b. HARD COMPLETION — only shown after testimonial is claimed */}
+        <AnimatePresence>
+          {alreadyClaimed && level === "Hard" && !nextLevel && (
+            <motion.section
+              key="champion-banner"
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+              className="mb-20"
+            >
+              <div className="relative bg-gradient-to-br from-amber-400 via-rose-500 to-shining-purple rounded-[2.5rem] p-8 lg:p-12 overflow-hidden shadow-2xl text-white text-center">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+                <div className="relative z-10 flex flex-col items-center">
+                  <motion.div
+                    initial={{ scale: 0, rotate: -10 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ type: "spring", delay: 0.2, bounce: 0.5 }}
+                    className="w-24 h-24 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mb-6 shadow-xl"
+                  >
+                    <span className="text-5xl">🏆</span>
+                  </motion.div>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">You&apos;re a SHINING Champion! 🎉</h3>
+                  <p className="text-white/90 text-lg max-w-lg mx-auto mb-8">
+                    Luar biasa! Kamu telah menyelesaikan <strong>semua level</strong> di SHINING — Easy, Medium, dan Hard. Kamu adalah bintang yang sesungguhnya! ⭐
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link
+                      href="/music-map"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-white text-shining-dark rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg"
+                    >
+                      🗺️ Back to Music Map
+                    </Link>
+                    <Link
+                      href="/"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-white/20 border border-white/30 text-white rounded-full font-bold text-lg hover:scale-105 hover:bg-white/30 transition-all"
+                    >
+                      🏠 Back to Home
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
 
       </div>
 

@@ -100,6 +100,9 @@ export default function MediumMission() {
       quizEmbedUrl="https://wayground.com/join?gc=09008702&source=liveDashboard"
       lyrics={mediumLyrics}
       games={mediumGames}
+      nextLevel="Hard"
+      nextLevelHref="/music-map/hard"
+      nextSongTitle="Runaway"
     />
   );
 }
