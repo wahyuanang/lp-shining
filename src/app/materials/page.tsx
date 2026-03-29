@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { BookOpen, Compass, Headphones, Sparkles, MessageCircle, Music, Star, Code, ArrowRight, Play, Heart, ShieldQuestion } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const fadeInUp: Variants = {
@@ -106,6 +107,10 @@ export default function Materials() {
             Did you know?
           </motion.h2>
 
+          <p className="text-amber-800 text-sm leading-relaxed pb-8 text-center">
+            Learning English through songs is one of the fastest ways to improve your English (a real "life hack"). Why?
+          </p>
+
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 w-full relative">
             
             {/* Left Bubbles */}
@@ -116,7 +121,7 @@ export default function Materials() {
                   <MessageCircle className="text-amber-500" size={20} /> Pronunciation (Pelafalan)
                 </h3>
                 <p className="text-amber-800 text-sm leading-relaxed">
-                  Latih pengucapan cara bicara agar natural mengikrarkan nada ucapan yang disesuaikan ritme lagu seperti penutur asli (Native).
+                  Kamu secara alami mengikuti cara penyanyi asli (native speaker) mengucapkan kata agar pas dengan nadanya. Otomatis aksenmu jadi bagus!
                 </p>
               </motion.div>
 
@@ -126,7 +131,7 @@ export default function Materials() {
                   <Star className="text-purple-500" size={20} /> Slang & Idioms
                 </h3>
                 <p className="text-purple-800 text-sm leading-relaxed">
-                  Bantu pembelajar membedakan bahasa "resmi" dengan "gaul" (slang) yang paling sering dipakai *native speaker* sehari-hari.
+                Buku paket mengajarkan bahasa formal, tapi lagu mengajarkan bahasa gaul (slang) yang dipakai sehari-hari oleh penutur asli (native speaker).
                 </p>
               </motion.div>
             </div>
@@ -134,15 +139,11 @@ export default function Materials() {
             {/* Center Graphic */}
             <motion.div 
               variants={fadeInUp} 
-              className="w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-2xl relative z-20 shrink-0"
+              className="w-48 h-64 lg:w-64 lg:h-80 relative z-20 shrink-0"
               animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             >
-              <div className="absolute inset-2 border-2 border-white/20 rounded-full border-dashed animate-[spin_20s_linear_infinite]" />
-              <Headphones size={80} className="text-white drop-shadow-md" />
-              <div className="absolute -bottom-4 bg-white text-emerald-600 font-bold px-4 py-1.5 rounded-full shadow-lg text-sm whitespace-nowrap">
-                Learning through Songs
-              </div>
+              <Image src="/img-materials.png" alt="Materials Graphic" fill className="object-contain mix-blend-multiply" />
             </motion.div>
 
             {/* Right Bubbles */}
@@ -150,10 +151,10 @@ export default function Materials() {
               <motion.div variants={fadeInUp} className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-[2rem] border border-blue-200 shadow-md relative group hover:scale-105 transition-transform mt-8 lg:mt-0">
                 <div className="absolute -left-3 top-1/2 w-6 h-6 bg-blue-100 rotate-45 border-b border-l border-blue-200 hidden lg:block" />
                 <h3 className="font-bold text-blue-900 text-lg mb-2 flex items-center gap-2">
-                  <BookOpen className="text-blue-500" size={20} /> Vocabulary (Kosakata)
+                  <BookOpen className="text-blue-500" size={20} /> Vocabulary Sticky (Kosakata)
                 </h3>
                 <p className="text-blue-800 text-sm leading-relaxed">
-                  Kata-kata dalam lirik lebih "lengket" di otak karena dibungkus dengan nada. Masih ingat nada lirik "Baby Shark"? Pastinya dong!
+                  Kata-kata dalam lagu lebih "lengket" di otak karena ada nadanya. Coba ingat lirik "Baby Shark", pasti susah lupanya, kan?
                 </p>
               </motion.div>
             </div>
@@ -285,7 +286,7 @@ export default function Materials() {
               <div className="w-14 h-14 bg-emerald-200 text-emerald-700 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:rotate-12 transition-transform">1</div>
               <h3 className="text-2xl font-bold text-emerald-900 mb-3">Rhyme (Rima)</h3>
               <p className="text-emerald-700 mb-6 text-sm">The similarity of sounds at the end of lines.</p>
-              <div className="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm mt-auto">
+              <div className="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
                 <p className="text-emerald-900 font-medium italic text-sm">"I see the l<span className="text-emerald-500 font-bold">ight</span> / inside your s<span className="text-emerald-500 font-bold">ight</span>"</p>
                 <p className="text-xs text-emerald-600 mt-2 font-bold uppercase tracking-wider">(light — sight)</p>
               </div>
@@ -296,7 +297,7 @@ export default function Materials() {
               <div className="w-14 h-14 bg-rose-200 text-rose-700 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:scale-110 transition-transform">2</div>
               <h3 className="text-2xl font-bold text-rose-900 mb-3">Slang & Informal Grammar</h3>
               <p className="text-rose-700 mb-6 text-sm">Relaxed language. Do not use this in formal letters!</p>
-              <div className="bg-white p-4 rounded-xl border border-rose-100 shadow-sm flex flex-col gap-2 mt-auto">
+              <div className="bg-white p-4 rounded-xl border border-rose-100 shadow-sm flex flex-col gap-2">
                 <div className="flex justify-between text-sm"><span className="font-bold text-rose-600">Gonna</span><span className="text-slate-500">= Going to</span></div>
                 <div className="flex justify-between text-sm"><span className="font-bold text-rose-600">Wanna</span><span className="text-slate-500">= Want to</span></div>
                 <div className="flex justify-between text-sm"><span className="font-bold text-rose-600">Ain&apos;t</span><span className="text-slate-500">= Are not / Is not</span></div>
@@ -343,11 +344,8 @@ export default function Materials() {
              
              {/* Header */}
              <div className="flex flex-col md:flex-row items-center gap-8 border-b border-white/10 pb-8 mb-8">
-               <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 bg-gradient-to-br from-shining-purple to-shining-yellow rounded-2xl shadow-2xl flex items-center justify-center p-2">
-                 <div className="w-full h-full rounded-xl border border-white/30 flex items-center justify-center flex-col gap-2">
-                    <Music size={40} className="text-white/80" />
-                    <span className="font-title text-2xl tracking-widest text-white/90">Bruno Mars</span>
-                 </div>
+               <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 rounded-2xl shadow-2xl overflow-hidden relative border border-white/20">
+                 <img src="/img-case-studi.png" alt="Count On Me - Bruno Mars" className="w-full h-full object-cover" />
                </div>
                <div className="text-center md:text-left">
                   <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-shining-yellow text-xs font-bold uppercase tracking-wider mb-3">
@@ -358,6 +356,11 @@ export default function Materials() {
                   <motion.p variants={fadeInUp} className="text-white/80 bg-white/10 p-3 rounded-xl text-sm border border-white/5 inline-block max-w-lg leading-relaxed">
                     This song is essential for 7th graders. The language is simple, and the message is deep. Let&apos;s analyze the lyrics!
                   </motion.p>
+                  <motion.div variants={fadeInUp} className="mt-4">
+                    <Link href="/music-map/easy" className="inline-flex items-center gap-2 px-6 py-3 bg-shining-yellow text-shining-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
+                      Start Easy Level Mode <ArrowRight size={18} />
+                    </Link>
+                  </motion.div>
                </div>
              </div>
 

@@ -1,4 +1,4 @@
-import MissionLayout, { Vocabulary, LyricLine } from "@/components/MissionLayout";
+import MissionLayout, { Vocabulary, LyricLine, Game } from "@/components/MissionLayout";
 
 const mediumVocab: Vocabulary[] = [
   { word: "Protect", meaning: "Melindungi", pronunciation: "pro-tekt (/prəˈtekt/)" },
@@ -72,6 +72,24 @@ const mediumLyrics: LyricLine[] = [
   { english: "Always", translation: "Selalu" },
 ];
 
+const mediumGames: Game[] = [
+  {
+    title: "Find a Match",
+    instruction: " Listen to the song and find the hidden word! (Dengarkan lagunya dan temukan kata dari suara yang tersembunyi!)",
+    embedUrl: "https://wordwall.net/embed/play/110294/826/386"
+  },
+  {
+    title: "Balloon Pop",
+    instruction: "Pop the balloon with the correct word to complete the song lyrics! (Pecahkan balon dengan kata yang tepat untuk melengkapi lirik lagunya!)",
+    embedUrl: "https://wordwall.net/embed/play/110296/494/532"
+  },
+  {
+    title: "SHINING Flight",
+    instruction: "Welcome to the SHINING Flight! ✈️ Listen to 'You'll Be In My Heart' and steer your airplane into the correct cloud to complete the lyrics. Watch out for the wrong clouds and fly safely! (Selamat datang di Penerbangan SHINING! ✈️ Dengarkan lagu 'You'll Be In My Heart' dan arahkan pesawatmu ke awan yang tepat untuk melengkapi lirik. Hati-hati dengan awan yang salah dan terbanglah dengan aman!)",
+    embedUrl: "https://wordwall.net/embed/play/110319/217/528"
+  }
+];
+
 export default function MediumMission() {
   return (
     <MissionLayout
@@ -79,8 +97,9 @@ export default function MediumMission() {
       songTitle="You'll Be In My Heart"
       youtubeId="UWKy0bpRH9Y"
       vocabulary={mediumVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=224684"
+      quizEmbedUrl="https://wayground.com/join?gc=09008702&source=liveDashboard"
       lyrics={mediumLyrics}
+      games={mediumGames}
     />
   );
 }

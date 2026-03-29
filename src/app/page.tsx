@@ -82,7 +82,7 @@ export default function Home() {
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
-            <Link href="/music-map" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-shining-purple text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(91,33,182,0.8)]">
+            <Link href="/materials" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-shining-purple text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(91,33,182,0.8)]">
               <span className="relative z-10 w-full text-center">Start Learning Now</span>
               <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
               <div className="absolute inset-0 bg-gradient-to-r from-shining-purple to-shining-violet opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -103,7 +103,7 @@ export default function Home() {
                  src="/img-hero.png" 
                  alt="Students learning with music" 
                  fill
-                 className="object-cover"
+                 className="object-contain"
                  priority
                />
             </div>
@@ -159,8 +159,8 @@ export default function Home() {
           {/* Card 2: 1 Col */}
           <motion.div variants={fadeInUp} className="bg-white border rounded-[2.5rem] p-8 md:p-10 hover:shadow-xl transition-shadow group flex flex-col justify-center">
             <Headphones size={36} className="mb-6 text-purple-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform" />
-            <h3 className="text-xl font-bold text-shining-dark mb-3">Improve Pronunciation</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <h3 className="text-2xl font-bold text-shining-dark mb-3">Improve Pronunciation</h3>
+            <p className="text-gray-500 text-base leading-relaxed">
               Latih pengucapan dengan cara natural seperti senam otak yang menyenangkan mengikuti lirik asli penyanyi.
             </p>
           </motion.div>
@@ -168,8 +168,8 @@ export default function Home() {
           {/* Card 3: 1 Col */}
           <motion.div variants={fadeInUp} className="bg-white border rounded-[2.5rem] p-8 md:p-10 hover:shadow-xl transition-shadow group flex flex-col justify-center">
             <Music size={36} className="mb-6 text-blue-500 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
-            <h3 className="text-xl font-bold text-shining-dark mb-3">Suitable for Teens</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <h3 className="text-2xl font-bold text-shining-dark mb-3">Suitable for Teens</h3>
+            <p className="text-gray-500 text-base leading-relaxed">
               Lirik lagu menyesuaikan kehidupan remaja zaman sekarang sehingga relevan dengan keseharian mereka.
             </p>
           </motion.div>

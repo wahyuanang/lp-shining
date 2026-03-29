@@ -105,7 +105,7 @@ export default function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="mobile-nav-indicator"
-                    className="absolute inset-0 bg-shining-violet/10 rounded-full"
+                    className="absolute inset-0"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}

@@ -29,11 +29,8 @@ export default function Footer() {
           
           <div className="w-full h-px bg-white/10 mb-8" />
           
-          <div className="flex flex-col md:flex-row justify-between items-center w-full text-sm text-white/50 text-center gap-4">
-            <p>© {new Date().getFullYear()} SHINING. All rights reserved.</p>
-            <p className="flex items-center justify-center gap-2">
-              Made with <Heart size={16} className="text-red-500 fill-red-500" /> and <Music size={16} /> for Learners
-            </p>
+          <div className="w-full text-sm text-white/50 gap-4">
+            <p className="text-center">© {new Date().getFullYear()} SHINING. All rights reserved.</p>
           </div>
         </div>
       </footer>

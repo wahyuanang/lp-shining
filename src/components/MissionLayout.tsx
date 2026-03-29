@@ -16,6 +16,11 @@ export interface LyricLine {
   english: string;
   translation: string;
 }
+export interface Game {
+  title: string;
+  instruction: string;
+  embedUrl: string;
+}
 
 interface MissionLayoutProps {
   level: "Easy" | "Medium" | "Hard";
@@ -24,9 +29,10 @@ interface MissionLayoutProps {
   vocabulary: Vocabulary[];
   quizEmbedUrl: string;
   lyrics?: LyricLine[];
+  games?: Game[];
 }
 
-export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics }: MissionLayoutProps) {
+export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games }: MissionLayoutProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -236,13 +242,39 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                Play <Gamepad2 size={20} className="text-amber-500 fill-amber-500" />
              </h2>
            </div>
-           <div className="bg-white rounded-[2rem] p-6 lg:p-10 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center min-h-[300px] border-dashed border-2">
-              <div className="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mb-4">
-                <Gamepad2 size={40} className="text-amber-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-700 mb-2">Interactive Game</h3>
-              <p className="text-slate-500 max-w-sm">The game module for this mission is currently in development. It will be available soon!</p>
-           </div>
+           {games && games.length > 0 ? (
+             <div className="flex flex-col gap-8">
+               {games.map((game, idx) => (
+                 <div key={idx} className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-700">{game.title}</h3>
+                      <p className="text-amber-600 font-medium text-sm mt-1 bg-amber-50 inline-block px-3 py-1 rounded-full border border-amber-100">
+                        ✨ INSTRUCTION: {game.instruction}
+                      </p>
+                    </div>
+                    <div className="w-full aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
+                      <iframe 
+                        style={{ maxWidth: "100%" }} 
+                        src={game.embedUrl} 
+                        width="100%" 
+                        height="100%" 
+                        frameBorder="0" 
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                      ></iframe>
+                    </div>
+                 </div>
+               ))}
+             </div>
+           ) : (
+             <div className="bg-white rounded-[2rem] p-6 lg:p-10 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center min-h-[300px] border-dashed border-2">
+                <div className="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                  <Gamepad2 size={40} className="text-amber-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-700 mb-2">Interactive Game</h3>
+                <p className="text-slate-500 max-w-sm">The game module for this mission is currently in development. It will be available soon!</p>
+             </div>
+           )}
         </section>
 
         {/* 4. CHALLENGE */}
