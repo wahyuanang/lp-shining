@@ -164,11 +164,11 @@ export default function About() {
                 
                 <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap gap-4 w-full justify-center lg:justify-start">
                   <a 
-                    href="mailto:sripuja2022.student.uny.ac.id"
+                    href="mailto:[EMAIL_ADDRESS]"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold transition-all hover:scale-105 shadow-sm"
                   >
                     <Mail size={18} className="text-shining-yellow" />
-                    <span>sripuja2022.student.uny.ac.id</span>
+                    <span>sripuja.2022@student.uny.ac.id</span>
                   </a>
                   <a 
                     href="https://www.instagram.com/srpujayanti/"
