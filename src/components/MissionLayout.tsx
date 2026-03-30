@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper, ArrowRight } from "lucide-react";
@@ -255,13 +255,14 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                         ✨ INSTRUCTION: {game.instruction}
                       </p>
                     </div>
-                    <div className="w-full aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
+                    <div className="w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
                       <iframe 
                         style={{ maxWidth: "100%" }} 
                         src={game.embedUrl} 
                         width="100%" 
                         height="100%" 
                         frameBorder="0" 
+                        allow="microphone; camera; fullscreen"
                         allowFullScreen
                         className="absolute inset-0 w-full h-full"
                       ></iframe>
@@ -298,7 +299,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                     src={quizEmbedUrl} 
                     title="Wayground Quiz" 
                     style={{ flex: 1, width: '100%', height: '100%' }} 
-                    frameBorder="0" 
+                    frameBorder="0"
+                    allow="microphone; camera; autoplay; clipboard-write; encrypted-media; fullscreen"
                     allowFullScreen>
                   </iframe>
                   <div className="bg-white py-2 text-center text-sm border-t">
