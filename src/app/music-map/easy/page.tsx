@@ -77,7 +77,7 @@ export default function EasyMission() {
       songTitle="Count On Me"
       youtubeId="V-ivEAzBiXI"
       vocabulary={countOnMeVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=28341822&source=liveDashboard"
+      quizEmbedUrl="https://wayground.com/join?gc=65712446&source=liveDashboard"
       lyrics={countOnMeLyrics}
       games={countOnMeGames}
       nextLevel="Medium"

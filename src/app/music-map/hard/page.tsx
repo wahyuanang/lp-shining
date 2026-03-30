@@ -106,7 +106,7 @@ export default function HardMission() {
       songTitle="Runaway"
       youtubeId="avddu-6ARy8"
       vocabulary={hardVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=18724414&source=liveDashboard"
+      quizEmbedUrl="https://wayground.com/join?gc=24834366&source=liveDashboard"
       lyrics={runawayLyrics}
       games={hardGames}
     />

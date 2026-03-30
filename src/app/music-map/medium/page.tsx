@@ -97,7 +97,7 @@ export default function MediumMission() {
       songTitle="You'll Be In My Heart"
       youtubeId="UWKy0bpRH9Y"
       vocabulary={mediumVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=09008702&source=liveDashboard"
+      quizEmbedUrl="https://wayground.com/join?gc=60977470&source=liveDashboard"
       lyrics={mediumLyrics}
       games={mediumGames}
       nextLevel="Hard"
