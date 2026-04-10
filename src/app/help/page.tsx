@@ -328,15 +328,32 @@ export default function HelpPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6 relative z-10"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
           >
+            {/* Home */}
+            <motion.div variants={fadeInUp} className="bg-white/5 border border-white/10 rounded-[2rem] p-6 hover:bg-white/10 transition-colors">
+              <div className="w-12 h-12 bg-shining-yellow/20 rounded-xl flex items-center justify-center mb-4">
+                <PlayCircle className="text-shining-yellow" size={22} />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-shining-yellow">Home</h3>
+              <p className="text-white/50 text-sm mb-4">Halaman utama &amp; pengenalan platform</p>
+              <div className="space-y-2">
+                {["Hero &amp; Tagline", "Fitur Unggulan", "Cara Belajar", "Testimonial", "Call to Action"].map(item => (
+                  <div key={item} className="flex items-center gap-2 text-xs text-white/60">
+                    <ChevronRight size={12} className="text-shining-yellow" />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
             {/* Materials */}
             <motion.div variants={fadeInUp} className="bg-white/5 border border-white/10 rounded-[2rem] p-6 hover:bg-white/10 transition-colors">
               <div className="w-12 h-12 bg-violet-500/30 rounded-xl flex items-center justify-center mb-4">
                 <BookOpen className="text-violet-300" size={22} />
               </div>
               <h3 className="text-xl font-bold mb-2 text-violet-300">Materials</h3>
-              <p className="text-white/50 text-sm mb-4">Halaman teori & materi pembelajaran</p>
+              <p className="text-white/50 text-sm mb-4">Halaman teori &amp; materi pembelajaran</p>
               <div className="space-y-2">
                 {["A. Definition", "B. Social Function", "C. Generic Structure", "D. Language Features", "E. Case Study"].map(item => (
                   <div key={item} className="flex items-center gap-2 text-xs text-white/60">
