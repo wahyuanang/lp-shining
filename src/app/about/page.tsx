@@ -126,7 +126,7 @@ export default function About() {
                    {/* Placeholder Icon */}
                    <User size={100} className="text-gray-400 opacity-50 absolute" />
                    <Image 
-                     src="/profile.jpeg" 
+                     src="/profile-img.jpeg" 
                      alt="Sri Puja" 
                      fill 
                      className="object-cover transition-transform duration-500 group-hover:scale-105" 
@@ -150,7 +150,7 @@ export default function About() {
                 
                 <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
                    <span className="text-white/60 font-medium text-lg flex items-center gap-2">
-                     <Rocket size={18} className="text-shining-purple" /> Platform Developer & Author
+                     <Rocket size={18} className="text-shining-purple" />Developer & Author
                    </span>
                 </motion.div>
 
