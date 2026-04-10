@@ -16,8 +16,7 @@ export default function Footer() {
           
           <h2 className="text-3xl font-extrabold text-white mb-6">SHINING</h2>
           <p className="text-center max-w-md mx-auto mb-10 text-white/60">
-            Platform pembelajaran Bahasa Inggris berbasis lagu yang membantu siswa 
-            memahami rima, makna lirik, dan pesan moral melalui metode interaktif.
+            A song-based English learning platform that helps students understand the rhymes, meanings of lyrics, and moral messages through interactive methods.
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-12">

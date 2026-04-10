@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, Map, Info, Sparkles } from "lucide-react";
+import { Home, BookOpen, Map, Info, HelpCircle } from "lucide-react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,6 +12,7 @@ const navItems = [
   { name: "Home", href: "/", icon: Home },
   { name: "Materials", href: "/materials", icon: BookOpen },
   { name: "Music Map", href: "/music-map", icon: Map },
+  { name: "Help", href: "/help", icon: HelpCircle },
   { name: "About Us", href: "/about", icon: Info },
 ];
 

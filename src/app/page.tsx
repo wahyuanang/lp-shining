@@ -21,10 +21,10 @@ const staggerContainer: Variants = {
 };
 
 const mainFeaturesList = [
-  { title: "Listen the Song", desc: "Mendengarkan pilihan lagu terbaik untuk membiasakan telinga dengan pronunciation yang natural.", icon: PlayCircle, color: "text-blue-500", bg: "bg-blue-500/10" },
-  { title: "Read the Lyrics", desc: "Pahami makna mendalam dari lirik lagu dan temukan kosa kata baru yang belum pernah kamu ketahui.", icon: BookA, color: "text-purple-500", bg: "bg-purple-500/10" },
-  { title: "Quiz & Challenge", desc: "Latih pemahamanmu dengan menjawab quiz interaktif secara langsung dan kumpulkan poin.", icon: HelpCircle, color: "text-rose-500", bg: "bg-rose-500/10" },
-  { title: "Score & Reward", desc: "Raih nilai tertinggimu, tembus leadeboard, dan dapatkan penghargaan eksklusif dari SHINING.", icon: Trophy, color: "text-shining-yellow", bg: "bg-shining-yellow/20" },
+  { title: "Listen the Song", desc: "Listen to a selection of the best songs to get your ears used to natural pronunciation.", icon: PlayCircle, color: "text-blue-500", bg: "bg-blue-500/10" },
+  { title: "Read the Lyrics", desc: "Understand the deeper meaning of song lyrics and discover new vocabulary you’ve never encountered before.", icon: BookA, color: "text-purple-500", bg: "bg-purple-500/10" },
+  { title: "Quiz & Challenge", desc: "Test your understanding by playing games and taking interactive quizzes in real time, and earn points.", icon: HelpCircle, color: "text-rose-500", bg: "bg-rose-500/10" },
+  { title: "Score & Reward", desc: "Achieve your highest score, make it onto the leaderboard, and earn exclusive rewards from SHINING.", icon: Trophy, color: "text-shining-yellow", bg: "bg-shining-yellow/20" },
 ];
 
 export default function Home() {
@@ -78,7 +78,7 @@ export default function Home() {
           </motion.div>
 
           <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 max-w-xl leading-relaxed">
-            <span className="font-bold text-shining-purple">SHINING</span> adalah platform pembelajaran Bahasa Inggris berbasis lagu (song lyrics) yang membantu siswa memahami kosa kata, makna lirik, dan pesan moral melalui aktivitas interaktif.
+            <span className="font-bold text-shining-purple">SHINING</span> is a song-based English learning platform that helps students understand vocabulary, the meaning of lyrics, and moral messages through interactive activities.
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
@@ -152,7 +152,7 @@ export default function Home() {
             <Sparkles size={40} className="mb-6 text-shining-yellow" />
             <h3 className="text-3xl font-bold mb-4">Fun Learning</h3>
             <p className="text-white/80 text-lg leading-relaxed max-w-md">
-              Lagu membuat proses belajar lebih menyenangkan, seru, dan tidak ketat seperti metode tradisional. Menikmati proses sangatlah penting!
+              Songs make the learning process more enjoyable, exciting, and less rigid than traditional methods. Enjoying the process is very important! 
             </p>
           </motion.div>
 
@@ -161,7 +161,7 @@ export default function Home() {
             <Headphones size={36} className="mb-6 text-purple-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform" />
             <h3 className="text-2xl font-bold text-shining-dark mb-3">Improve Pronunciation</h3>
             <p className="text-gray-500 text-base leading-relaxed">
-              Latih pengucapan dengan cara natural seperti senam otak yang menyenangkan mengikuti lirik asli penyanyi.
+              Practice pronunciation in a natural way—like a fun brain exercise—by following the singer’s original lyrics.
             </p>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Home() {
             <Music size={36} className="mb-6 text-blue-500 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
             <h3 className="text-2xl font-bold text-shining-dark mb-3">Suitable for Teens</h3>
             <p className="text-gray-500 text-base leading-relaxed">
-              Lirik lagu menyesuaikan kehidupan remaja zaman sekarang sehingga relevan dengan keseharian mereka.
+              The song lyrics reflect the lives of today’s teenagers, making them relevant to their daily lives. 
             </p>
           </motion.div>
 
@@ -183,7 +183,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold text-shining-dark mb-3">Easy to Remember</h3>
                 <p className="text-yellow-800 leading-relaxed text-lg max-w-2xl">
-                  Pengulangan lirik (chorus) dan melodi yang nempel di telinga memudahkan mengingat struktur tata bahasa dengan lebih cepat.
+                  The repetition of the lyrics (chorus) and catchy melodies makes it easier to memorize grammatical structures more quickly.
                 </p>
               </div>
             </div>
@@ -274,13 +274,13 @@ export default function Home() {
                           <h3 className="text-3xl lg:text-4xl font-extrabold mb-4">{activeData.title}</h3>
                           <p className="text-white/80 text-lg max-w-md">{activeData.desc}</p>
                           
-                          <motion.div 
+                          {/* <motion.div 
                             className="mt-8 px-6 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur font-medium text-sm flex items-center gap-2"
                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
                           >
                              <Sparkles size={16} className={activeData.color} />
                              Interactive Module
-                          </motion.div>
+                          </motion.div> */}
                         </>
                       );
                     })()}
@@ -311,14 +311,14 @@ export default function Home() {
           className="flex flex-col lg:flex-row items-center gap-16"
         >
           <div className="flex-1">
-            <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-violet/10 text-shining-purple font-bold text-sm tracking-wider uppercase mb-4 shadow-sm">
+            <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-yellow/20 text-yellow-700 font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-shining-yellow/30">
               Choose Your Flow
             </motion.span>
             <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-6 leading-tight">
               Special Learning Level <br/> For You
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-8">
-              SHINING menyediakan sistem tingkatan lagu mulai dari <span className="font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-md">Easy</span>, <span className="font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">Medium</span>, dan <span className="font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-md">Hard</span> supaya kamu bisa belajar sesuai kemampuanmu—nggak terlalu gampang, nggak terlalu susah, tapi pasti asik! <br/><br/> Let's enjoy learning with music!
+              SHINING offers song difficulty levels ranging from <span className="font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-md">Easy</span>, <span className="font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">Medium</span>, dan <span className="font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-md">Hard</span> so you can learn at your own pace—not too easy, not too hard, but definitely fun! <br/><br/> Let's enjoy learning with music!
             </motion.p>
             <motion.div variants={fadeInUp}>
                <Link href="/music-map" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-shining-dark border border-gray-200 shadow-sm hover:shadow-lg hover:border-shining-violet transition-all group overflow-hidden relative">
@@ -331,15 +331,15 @@ export default function Home() {
 
           <div className="flex-1 grid gap-4 w-full">
             {[
-              { level: "EASY", desc: "Lagu dengan lirik perlahan dan memuat banyak kata-kata umum (Basic Vocab).", color: "bg-emerald-500/10 text-emerald-600 border-emerald-200" },
-              { level: "MEDIUM", desc: "Tempo sedikit lebih cepat, melatih listening ekstra dan peribahasa idiom.", color: "bg-amber-500/10 text-amber-600 border-amber-200" },
-              { level: "HARD", desc: "Lagu Rap / tempo dinamis dengan penggunaan Advance Vocabulary.", color: "bg-rose-500/10 text-rose-600 border-rose-200" },
+              { level: "EASY", desc: "A song with slow lyrics and lots of common words (Basic Vocabulary).", color: "bg-emerald-500/10 text-emerald-600 border-emerald-200" },
+              { level: "MEDIUM", desc: "The pace is a little faster, focusing on extra listening practice and idioms.", color: "bg-amber-500/10 text-amber-600 border-amber-200" },
+              { level: "HARD", desc: "Rap song / dynamic tempo with the use of advanced vocabulary.", color: "bg-rose-500/10 text-rose-600 border-rose-200" },
             ].map((lvl, i) => (
               <motion.div 
                 key={i} 
                 variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                className={`flex items-center gap-6 p-6 rounded-[2rem] border ${lvl.color} backdrop-blur-sm cursor-pointer transition-all hover:shadow-md bg-white/50 group`}
+                // whileHover={{ scale: 1.02 }}
+                className={`flex items-center gap-6 p-6 rounded-[2rem] border ${lvl.color} backdrop-blur-sm cursor-default transition-all hover:shadow-md bg-white/50 group`}
               >
                 <div className={`w-16 h-16 shrink-0 rounded-full flex items-center justify-center font-black text-xl bg-white shadow-sm border ${lvl.color} border-opacity-50 group-hover:scale-110 transition-transform`}>
                   {i + 1}
@@ -364,7 +364,7 @@ export default function Home() {
           className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8"
         >
           <div className="max-w-2xl">
-             <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-purple/10 text-shining-purple font-bold text-sm tracking-wider uppercase mb-4 shadow-sm">
+             <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-yellow/20 text-yellow-700 font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-shining-yellow/30">
                 Testimonials
              </motion.span>
              <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4">
@@ -375,7 +375,7 @@ export default function Home() {
              </motion.p>
           </div>
           <motion.div variants={fadeInUp} className="mt-8 md:mt-0 flex flex-col items-end">
-             <div className="flex -space-x-4">
+             {/* <div className="flex -space-x-4">
                 {[1,2,3,4].map(num => (
                   <div key={num} className="w-12 h-12 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center font-bold text-slate-500 shadow-sm text-sm">
                     {num}
@@ -384,7 +384,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-shining-yellow flex items-center justify-center font-bold text-shining-dark shadow-sm text-sm z-10">
                   99+
                 </div>
-             </div>
+             </div> */}
              <button 
                onClick={() => {
                  localStorage.removeItem("shining_testimonials");

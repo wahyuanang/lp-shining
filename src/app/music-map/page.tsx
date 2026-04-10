@@ -7,9 +7,9 @@ import { PlayCircle, Trophy, Sparkles, ChevronRight } from "lucide-react";
 const levels = [
   {
     id: "easy",
-    title: "Count On Me",
+    title: "This Is The Way We Make Friends",
     levelName: "EASY",
-    desc: "Lagu dengan lirik perlahan dan memuat banyak kata-kata umum (Basic Vocab).",
+    desc: "A song with slow lyrics and lots of common words (Basic Vocabulary).",
     color: "emerald",
     bg: "from-emerald-400 to-emerald-600",
     shadow: "shadow-emerald-500/30",
@@ -17,9 +17,9 @@ const levels = [
   },
   {
     id: "medium",
-    title: "You'll Be In My Heart",
+    title: "Count On Me",
     levelName: "MEDIUM",
-    desc: "Tempo sedikit lebih cepat, melatih listening ekstra dan peribahasa idiom.",
+    desc: "The pace is a little faster, focusing on extra listening practice and idioms.",
     color: "amber",
     bg: "from-amber-400 to-amber-600",
     shadow: "shadow-amber-500/30",
@@ -29,7 +29,7 @@ const levels = [
     id: "hard",
     title: "Runaway",
     levelName: "HARD",
-    desc: "Lagu Rap / tempo dinamis dengan penggunaan Advance Vocabulary.",
+    desc: "Rap song / dynamic tempo with the use of advanced vocabulary.",
     color: "rose",
     bg: "from-rose-400 to-rose-600",
     shadow: "shadow-rose-500/30",
@@ -54,7 +54,7 @@ export default function MusicMap() {
         </span>
         <h1 className="text-5xl lg:text-7xl font-title text-shining-dark mb-4 drop-shadow-sm">Music Map</h1>
         <p className="text-lg text-gray-600 leading-relaxed font-medium max-w-lg mx-auto">
-          Pilih level lagumu dan mulailah belajar bahasa Inggris dengan cara yang paling seru!
+         Choose your level and start learning English the most fun way possible!
         </p>
       </motion.div>
 

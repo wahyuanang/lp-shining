@@ -33,7 +33,7 @@ const starsData = [
 ];
 
 export default function Materials() {
-  const [activeStructure, setActiveStructure] = useState(2); // default Chorus
+  const [activeStructure, setActiveStructure] = useState(0); // default Intro
 
   const structures = [
     { title: "Intro", desc: "The opening music. No singing yet. It sets the mood.", color: "from-blue-400 to-blue-600" },
@@ -121,7 +121,7 @@ export default function Materials() {
                   <MessageCircle className="text-amber-500" size={20} /> Pronunciation (Pelafalan)
                 </h3>
                 <p className="text-amber-800 text-sm leading-relaxed">
-                  Kamu secara alami mengikuti cara penyanyi asli (native speaker) mengucapkan kata agar pas dengan nadanya. Otomatis aksenmu jadi bagus!
+                 You naturally follow the way native speakers pronounce words to match their intonation. Your accent will automatically improve!
                 </p>
               </motion.div>
 
@@ -131,7 +131,7 @@ export default function Materials() {
                   <Star className="text-purple-500" size={20} /> Slang & Idioms
                 </h3>
                 <p className="text-purple-800 text-sm leading-relaxed">
-                Buku paket mengajarkan bahasa formal, tapi lagu mengajarkan bahasa gaul (slang) yang dipakai sehari-hari oleh penutur asli (native speaker).
+                Textbooks teach formal language, but songs teach the slang used in everyday conversation by native speakers.
                 </p>
               </motion.div>
             </div>
@@ -154,7 +154,7 @@ export default function Materials() {
                   <BookOpen className="text-blue-500" size={20} /> Vocabulary Sticky (Kosakata)
                 </h3>
                 <p className="text-blue-800 text-sm leading-relaxed">
-                  Kata-kata dalam lagu lebih "lengket" di otak karena ada nadanya. Coba ingat lirik "Baby Shark", pasti susah lupanya, kan?
+                  Words in songs stick in your mind better because of the melody. Try to recall the lyrics to “Baby Shark”—it’s hard to forget them, isn’t it?
                 </p>
               </motion.div>
             </div>
@@ -173,10 +173,10 @@ export default function Materials() {
             </div>
             <motion.h2 variants={fadeInUp} className="text-5xl font-title text-shining-yellow mb-4 drop-shadow-sm">A. Definition</motion.h2>
             <motion.p variants={fadeInUp} className="text-white/90 text-lg leading-relaxed mb-6">
-              Dalam bahasa Inggris, music (song) adalah gubahan seni nada atau suara dalam urutan, kombinasi, dan hubungan waktu tertentu untuk menghasilkan komposisi musik yang mempunyai kesatuan dan kesinambungan.
+              In English, music (song) is an artistic arrangement of tones or sounds in a specific sequence, combination, and temporal relationship to produce a musical composition that possesses unity and continuity.
             </motion.p>
             <motion.div variants={fadeInUp} className="bg-white/10 backdrop-blur border border-white/20 p-5 rounded-3xl mt-auto">
-              <p className="font-medium text-white">Tapi, kenapa orang menciptakan lagu? Karena setiap lagu punya <span className="text-shining-yellow font-bold">Fungsi Sosial (Social Function)</span>.</p>
+              <p className="font-medium text-white">But why do people create songs? Because every song has <span className="text-shining-yellow font-bold">a social function</span>.</p>
             </motion.div>
           </motion.div>
 
@@ -186,11 +186,11 @@ export default function Materials() {
             
             <div className="flex flex-col gap-4">
               {[
-                { title: "To Entertain", desc: "Jelas, untuk menghibur kita saat bosan.", icon: Play, color: "bg-emerald-100 text-emerald-600" },
-                { title: "To Express Feelings", desc: "Pernah merasa sedih tapi bingung ngomongnya? Lagu mewakili perasaan penulisnya (sedih, bahagia, marah).", icon: Heart, color: "bg-rose-100 text-rose-600" },
-                { title: "To Teach Moral Values", desc: "Lagu seringkali berisi nasihat bijak tentang kehidupan tanpa menggurui.", icon: ShieldQuestion, color: "bg-amber-100 text-amber-600" }
+                { title: "To Entertain", desc: "Obviously, to entertain us when we’re bored.", icon: Play, color: "bg-emerald-100 text-emerald-600" },
+                { title: "To Express Feelings", desc: "Ever felt sad but didn’t know how to put it into words? Songs convey the writer’s emotions (sadness, happiness, anger).", icon: Heart, color: "bg-rose-100 text-rose-600" },
+                { title: "To Teach Moral Values", desc: "Songs often contain wise advice about life without being preachy.", icon: ShieldQuestion, color: "bg-amber-100 text-amber-600" }
               ].map((item, idx) => (
-                <motion.div variants={fadeInUp} key={idx} className="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-2xl transition-colors cursor-pointer group">
+                <motion.div variants={fadeInUp} key={idx} className="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-2xl transition-colors cursor-default group">
                   <div className={`mt-1 p-3 rounded-full shrink-0 group-hover:scale-110 transition-transform ${item.color}`}>
                     <item.icon size={20} className="fill-current" />
                   </div>
@@ -356,11 +356,6 @@ export default function Materials() {
                   <motion.p variants={fadeInUp} className="text-white/80 bg-white/10 p-3 rounded-xl text-sm border border-white/5 inline-block max-w-lg leading-relaxed">
                     This song is essential for 7th graders. The language is simple, and the message is deep. Let&apos;s analyze the lyrics!
                   </motion.p>
-                  <motion.div variants={fadeInUp} className="mt-4">
-                    <Link href="/music-map/easy" className="inline-flex items-center gap-2 px-6 py-3 bg-shining-yellow text-shining-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                      Start Easy Level Mode <ArrowRight size={18} />
-                    </Link>
-                  </motion.div>
                </div>
              </div>
 
@@ -410,7 +405,11 @@ export default function Materials() {
                   </div>
                 </motion.div>
              </div>
-
+ <motion.div variants={fadeInUp} className="mt-4">
+                    <Link href="/music-map/easy" className="inline-flex items-center gap-2 px-6 py-3 bg-shining-yellow text-shining-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
+                      Start Easy Level Mode <ArrowRight size={18} />
+                    </Link>
+                  </motion.div>
           </div>
         </motion.div>
       </section>

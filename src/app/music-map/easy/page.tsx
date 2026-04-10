@@ -1,72 +1,65 @@
 import MissionLayout, { Vocabulary, LyricLine, Game } from "@/components/MissionLayout";
 
-const countOnMeVocab: Vocabulary[] = [
-  { word: "Lost", meaning: "Tersesat / Hilang", pronunciation: "lost (/lɔːst/)" },
-  { word: "Middle", meaning: "Tengah", pronunciation: "mi-dl (/ˈmɪd.əl/)" },
-  { word: "Sea", meaning: "Laut", pronunciation: "sii (/siː/)" },
-  { word: "Made of", meaning: "Terdiri dari / Terbuat dari (Dalam lagu ini bermakna: Karakter asli / Ketangguhan kita)", pronunciation: "meid of (/meɪd ʌv/)" },
-  { word: "In need", meaning: "Dalam kesulitan / Membutuhkan bantuan", pronunciation: "in niid (/ɪn niːd/)" },
-  { word: "Cry on", meaning: "Menangis (bersandar)", pronunciation: "krai on (/kraɪ ɒn/)" },
-  { word: "Let go", meaning: "Melepaskan", pronunciation: "let gou (/let ɡoʊ/)" },
-  { word: "Fall asleep", meaning: "Tertidur", pronunciation: "fol e-slip (/fɔːl əˈsliːp/)" },
+const makefriendsVocab: Vocabulary[] = [
+  { word: "Make friends", meaning: "Berteman / Membuat teman", pronunciation: "meik frendz (/meɪk frendz/)" },
+  { word: "Say hello", meaning: "Mengucapkan salam / Menyapa", pronunciation: "sei he-low (/seɪ həˈloʊ/)" },
+  { word: "Share", meaning: "Berbagi", pronunciation: "syer (/ʃer/)" },
+  { word: "Toys", meaning: "Mainan", pronunciation: "toyz (/tɔɪz/)" },
+  { word: "Take turns", meaning: "Bergantian / Bergiliran", pronunciation: "teik ternz (/teɪk tɜːrnz/)" },
+  { word: "Play", meaning: "Bermain", pronunciation: "plei (/pleɪ/)" },
+  { word: "Game", meaning: "Permainan", pronunciation: "geim (/ɡeɪm/)" },
+  { word: "Sing", meaning: "Menyanyi", pronunciation: "sing (/sɪŋ/)" },
+  { word: "Together", meaning: "Bersama-sama", pronunciation: "tu-ge-ther (/təˈɡeð.ər/)" },
+  { word: "Say goodbye", meaning: "Mengucapkan selamat tinggal / Pamit", pronunciation: "sei gud-bai (/seɪ ɡʊdˈbaɪ/)" },
 ];
 
-const countOnMeLyrics: LyricLine[] = [
-  { english: "If you ever find yourself stuck in the middle of the sea", translation: "Jika kau terombang-ambing di tengah lautan" },
-  { english: "I'll sail the world to find you", translation: "Kan kulayari seluruh lautan 'tuk temukanmu" },
-  { english: "If you ever find yourself lost in the dark and you can't see", translation: "Jika kau tersesat dalam gelap dan kau tak bisa melihat" },
-  { english: "I'll be the light to guide you", translation: "Aku akan menjadi cahaya yang membimbingmu" },
-  { english: "Find out what we're made of", translation: "Temukan diri kita yang sebenarnya" },
-  { english: "When we are called to help our friends in need", translation: "Saat kita terpanggil untuk membantu teman yang membutuhkan" },
-  { english: "You can count on me like one, two, three", translation: "Kau bisa mengandalkanku seperti satu, dua, tiga" },
-  { english: "I'll be there", translation: "Aku akan datang" },
-  { english: "And I know when I need it, I can count on you like four, three, two", translation: "Dan aku tahu saat aku membutuhkannya, aku bisa mengandalkanmu seperti empat, tiga, dua" },
-  { english: "And you'll be there", translation: "Dan kau akan datang" },
-  { english: "'Cause that's what friends are supposed to do, oh, yeah", translation: "Karena begitulah seharusnya teman, oh, yeah" },
-  { english: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah", translation: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah" },
-  
-  { english: "If you're tossin' and you're turnin' and you just can't fall asleep", translation: "Jika kau sedang resah dan gelisah dan kau tak bisa tidur" },
-  { english: "I'll sing a song beside you", translation: "Kan kunyanyikan lagu di sisimu" },
-  { english: "And if you ever forget how much you really mean to me", translation: "Dan jika kau lupa betapa berartinya dirimu bagiku" },
-  { english: "Every day I will remind you, oh", translation: "Setiap hari aku akan mengingatkanmu, oh" },
-  { english: "Find out what we're made of", translation: "Mencari tahu terbuat dari apa diri kita" },
-  { english: "When we are called to help our friends in need", translation: "Saat kita terpanggil untuk membantu teman yang membutuhkan" },
-  
-  { english: "You can count on me like one, two, three", translation: "Kau bisa mengandalkanku seperti satu, dua, tiga" },
-  { english: "I'll be there", translation: "Aku akan datang" },
-  { english: "And I know when I need it, I can count on you like four, three, two", translation: "Dan aku tahu saat aku membutuhkannya, aku bisa mengandalkanmu seperti empat, tiga, dua" },
-  { english: "And you'll be there", translation: "Dan kau akan datang" },
-  { english: "'Cause that's what friends are supposed to do, oh, yeah", translation: "Karena begitulah seharusnya teman, oh, yeah" },
-  { english: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah", translation: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah" },
-  
-  { english: "You'll always have my shoulder when you cry", translation: "Kau boleh selalu menangis di pundakku" },
-  { english: "I'll never let go, never say goodbye", translation: "Aku takkan pernah pergi, takkan pernah bilang selamat tinggal" },
-  
-  { english: "You know you can count on me like one, two, three", translation: "Kau tahu kau bisa mengandalkanku seperti satu, dua, tiga" },
-  { english: "I'll be there", translation: "Aku 'kan datang" },
-  { english: "And I know when I need it, I can count on you like four, three, two", translation: "Dan aku tahu saat aku membutuhkannya, aku bisa mengandalkanmu seperti empat, tiga, dua" },
-  { english: "And you'll be there", translation: "Dan kau 'kan datang" },
-  { english: "'Cause that's what friends are supposed to do, oh, yeah", translation: "Karena begitulah seharusnya teman, oh, yeah" },
-  { english: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah", translation: "Ooh-ooh-ooh-ooh-ooh, ooh-ooh-ooh-ooh, ooh, yeah, yeah" },
-  
-  { english: "You can count on me 'cause I can count on you", translation: "Kau bisa mengandalkanku karena aku bisa mengandalkanmu" },
+const makefriendscLyrics: LyricLine[] = [
+  { english: "This is the way we say, \"Hello,\"", translation: "Beginilah cara kita bilang, \"Halo,\"" },
+  { english: "say, \"Hello,\" say, \"Hello.\"", translation: "bilang, \"Halo,\" bilang, \"Halo.\"" },
+  { english: "This is the way we say, \"Hello.\"", translation: "Beginilah cara kita bilang, \"Halo.\"" },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
+
+  { english: "This is the way we share our toys,", translation: "Beginilah cara kita berbagi mainan," },
+  { english: "share our toys, share our toys.", translation: "berbagi mainan, berbagi mainan." },
+  { english: "This is the way we share our toys.", translation: "Beginilah cara kita berbagi mainan." },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
+
+  { english: "This is the way we take turns,", translation: "Beginilah cara kita bergiliran," },
+  { english: "take turns, take turns.", translation: "bergiliran, bergiliran." },
+  { english: "This is the way we take turns.", translation: "Beginilah cara kita bergiliran." },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
+
+  { english: "This is the way we play a game,", translation: "Beginilah cara kita bermain," },
+  { english: "play a game, play a game.", translation: "bermain, bermain." },
+  { english: "This is the way we play a game.", translation: "Beginilah cara kita bermain." },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
+
+  { english: "This is the way we sing a song,", translation: "Beginilah cara kita bernyanyi," },
+  { english: "sing a song, sing a song.", translation: "bernyanyi, bernyanyi." },
+  { english: "This is the way we sing a song.", translation: "Beginilah cara kita bernyanyi." },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
+
+  { english: "This is the way we say, \"Goodbye,\"", translation: "Beginilah cara kita bilang, \"Sampai jumpa,\"" },
+  { english: "say, \"Goodbye,\" say, \"Goodbye.\"", translation: "bilang, \"Sampai jumpa,\" bilang, \"Sampai jumpa.\"" },
+  { english: "This is the way we say, \"Goodbye.\"", translation: "Beginilah cara kita bilang, \"Sampai jumpa.\"" },
+  { english: "Let's be friends.", translation: "Ayo berteman." },
 ];
 
-const countOnMeGames: Game[] = [
+const makefriendsGames: Game[] = [
   {
-    title: "A True Friend vs Not a True Friend",
-    instruction: "Quickly drag and drop each action into the 'A True Friend' or 'Not a True Friend' box before the time runs out! (Kelompokkan setiap tindakan ke kotak 'A True Friend' atau 'Not a True Friend' secepat mungkin sebelum waktu habis!)",
-    embedUrl: "https://wordwall.net/embed/play/110259/763/869"
+    title: "Find a Match",
+    instruction: "Match the action to the correct situation! (Cocokkan setiap tindakan dengan situasi yang tepat!)",
+    embedUrl: "https://wordwall.net/embed/play/110988/497/683"
   },
   {
-    title: "SHINING Road Trip",
-    instruction: "Welcome to the SHINING Road Trip! 🚗 Drive your car and pick the right word to complete the lyrics. Watch out for the false words and enjoy the ride! (Selamat datang di Perjalanan SHINING! 🚗 Kemudikan mobilmu dan pilih kata yang tepat untuk melengkapi lirik. Hati-hati dengan kata yang salah dan nikmati perjalanannya!)",
-    embedUrl: "https://wordwall.net/embed/play/110320/115/885"
+    title: "Quiz Flying Fruit",
+    instruction: "Listen to the audio carefully, then choose the best answer to understand the meaning! (Dengarkan audio dengan seksama, lalu pilih jawaban terbaik untuk memahami artinya!)",
+    embedUrl: "https://wordwall.net/embed/play/110994/146/157"
   },
   {
-    title: "Maze Chase",
-    instruction: "Run to the correct answer and avoid the enemies! (Berlarilah ke jawaban yang tepat dan hindari musuh!)",
-    embedUrl: "https://wordwall.net/embed/play/110262/222/957"
+    title: "Game SHINING Flight",
+    instruction: "Run through the maze to find the right answer! Avoid the traps and choose the action based on the song! (Berlari melalui labirin untuk menemukan jawaban yang benar! Hindari jebakan dan pilih tindakan berdasarkan lagu!)",
+    embedUrl: "https://wordwall.net/embed/play/111000/840/568"
   }
 ];
 
@@ -74,12 +67,12 @@ export default function EasyMission() {
   return (
     <MissionLayout
       level="Easy"
-      songTitle="Count On Me"
-      youtubeId="V-ivEAzBiXI"
-      vocabulary={countOnMeVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=65712446&source=liveDashboard"
-      lyrics={countOnMeLyrics}
-      games={countOnMeGames}
+      songTitle="This Is The Way We Make Friends"
+      youtubeId="AT8qLCmseuE"
+      vocabulary={makefriendsVocab}
+      quizEmbedUrl="https://wayground.com/join?gc=55333377&source=liveDashboard"
+      lyrics={makefriendscLyrics}
+      games={makefriendsGames}
       nextLevel="Medium"
       nextLevelHref="/music-map/medium"
       nextSongTitle="You'll Be In My Heart"

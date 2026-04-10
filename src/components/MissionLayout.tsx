@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper, ArrowRight } from "lucide-react";
@@ -194,8 +194,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                     <div className="flex flex-col gap-3 pb-6">
                       {lyrics.map((line, idx) => (
                         <div key={idx} className="p-3 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100 transition-colors">
-                          <p className="font-semibold text-slate-800 text-lg">{line.english}</p>
-                          <p className="text-slate-500 text-sm mt-1">{line.translation}</p>
+                          <p className="font-bold text-slate-900 text-base leading-snug">{line.english}</p>
+                          <p className="text-emerald-600 text-sm mt-1 italic font-medium">{line.translation}</p>
                         </div>
                       ))}
                     </div>
@@ -251,9 +251,21 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                  <div key={idx} className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-700">{game.title}</h3>
-                      <p className="text-amber-600 font-medium text-sm mt-1 bg-amber-50 inline-block px-3 py-1 rounded-full border border-amber-100">
-                        ✨ INSTRUCTION: {game.instruction}
-                      </p>
+                       <div className="text-sm mt-2 bg-slate-50 px-3 py-2 rounded-xl border border-slate-100 inline-block">
+                         {(() => {
+                           const match = game.instruction.match(/^(.*?)(\(.*\))$/s);
+                           if (match) {
+                             return (
+                               <>
+                                 <span className="font-bold text-slate-800">✨ INSTRUCTION: {match[1].trim()}</span>
+                                 {" "}
+                                 <span className="font-medium text-emerald-600/80 italic">{match[2]}</span>
+                               </>
+                             );
+                           }
+                           return <span className="font-bold text-slate-800">✨ {game.instruction}</span>;
+                         })()}
+                       </div>
                     </div>
                     <div className="w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
                       <iframe 
@@ -341,8 +353,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                 </h3>
                 <p className="text-slate-600 max-w-md mx-auto mb-8">
                   {alreadyClaimed 
-                    ? "Kamu telah menyelesaikan misi ini dengan sangat baik! Testimoni kamu kini ditampilkan di halaman utama." 
-                    : "Setelah menonton, mempelajari kosakata, dan menyelesaikan kuis di atas, kini saatnya kamu mengklaim hadiahmu."}
+                    ? "You’ve done a great job on this mission! Your testimonial is now featured on the homepage." 
+                    : "After watching the video, learning the vocabulary, and completing the quiz above, it’s time to claim your prize."}
                 </p>
                 
                 <button 
@@ -386,7 +398,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">Ready for the Next Challenge?</h3>
                   <p className="text-white/70 max-w-md mx-auto mb-8">
-                    Selamat! Kamu sudah menyelesaikan level <span className="text-shining-yellow font-bold">{level}</span>. Saatnya naik ke level <span className="font-bold text-white">{nextLevel}</span> dengan lagu <span className="italic text-shining-yellow">&quot;{nextSongTitle}&quot;</span>!
+                   Congratulations! You've completed the Easy level. <span className="text-shining-yellow font-bold">{level}</span>. It's time to move on to the Medium level with the song <span className="font-bold text-white">{nextLevel}</span> dengan lagu <span className="italic text-shining-yellow">&quot;{nextSongTitle}&quot;</span>!
                   </p>
                   <Link
                     href={nextLevelHref}
@@ -531,7 +543,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                     
                     <h3 className="text-3xl font-extrabold text-slate-800 mb-2">Congratulations!</h3>
                     <p className="text-slate-600 mb-6">
-                      Terima kasih <span className="font-bold text-shining-purple">{testiName}</span>! Testimonimu berhasil diunggah.
+                      Thank you <span className="font-bold text-shining-purple">{testiName}</span>! Your testimonial has been successfully uploaded.
                     </p>
 
                     <div className="inline-block bg-pink-100 border border-pink-200 px-6 py-3 rounded-2xl mb-8">
