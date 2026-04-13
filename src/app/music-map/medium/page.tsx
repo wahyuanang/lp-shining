@@ -55,17 +55,17 @@ const mediumLyrics: LyricLine[] = [
 const mediumGames: Game[] = [
   {
     title: "A True Friend vs Not a True Friend",
-    instruction: "Quickly drag and drop each action into the 'A True Friend' or 'Not a True Friend' box before the time runs out! (Kelompokkan setiap tindakan ke kotak 'A True Friend' atau 'Not a True Friend' secepat mungkin sebelum waktu habis!)",
+    instruction: "Drag and drop each statement into the correct box! Decide which actions show a true friend and which do not. (Tarik dan lepaskan setiap pernyataan ke dalam kotak yang benar! Tentukan tindakan mana yang menunjukkan teman sejati dan mana yang tidak.)",
     embedUrl: "https://wordwall.net/embed/play/110259/763/869"
   },
   {
     title: "Game SHINING Flight",
-    instruction: "Welcome to the SHINING Flight! ✈️ Steer your airplane into the correct cloud to complete the lyrics. Watch out for the wrong clouds and fly safely! (Selamat datang di Penerbangan SHINING! ✈️ Arahkan pesawatmu ke awan yang tepat untuk melengkapi lirik. Hati-hati dengan awan yang salah dan terbanglah dengan aman!)",
+    instruction: "Fly your plane to the correct answer! Dodge the wrong answers so your plane doesn't crash. (Arahkan pesawatmu ke jawaban yang benar! Hindari awan jawaban yang salah agar pesawatmu tidak hancur.)",
     embedUrl: "https://wordwall.net/embed/play/110319/217/789"
   },
   {
     title: "Maze Chase",
-    instruction: "Run to the correct answer and avoid the enemies! (Berlarilah ke jawaban yang tepat dan hindari musuh!)",
+    instruction: "Run to the correct answer and avoid the enemies! (Berlarilah ke jawaban yang benar dan hindari para musuh!)",
     embedUrl: "https://wordwall.net/embed/play/110262/222/957"
   }
 ];
@@ -77,12 +77,12 @@ export default function MediumMission() {
       songTitle="Count On Me"
       youtubeId="V-ivEAzBiXI"
       vocabulary={mediumVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=28341822&source=liveDashboard"
+      quizEmbedUrl="https://wayground.com/join?gc=17839873"
       lyrics={mediumLyrics}
       games={mediumGames}
       nextLevel="Hard"
       nextLevelHref="/music-map/hard"
-      nextSongTitle="Runaway"
+      nextSongTitle="A Million Dreams"
     />
   );
 }

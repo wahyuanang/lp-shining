@@ -27,9 +27,9 @@ const levels = [
   },
   {
     id: "hard",
-    title: "Runaway",
+    title: "A Million Dreams",
     levelName: "HARD",
-    desc: "Rap song / dynamic tempo with the use of advanced vocabulary.",
+    desc: "An epic cinematic ballad from The Greatest Showman with rich vocabulary and powerful imagery.",
     color: "rose",
     bg: "from-rose-400 to-rose-600",
     shadow: "shadow-rose-500/30",

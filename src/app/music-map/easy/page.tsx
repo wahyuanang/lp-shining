@@ -48,18 +48,18 @@ const makefriendscLyrics: LyricLine[] = [
 const makefriendsGames: Game[] = [
   {
     title: "Find a Match",
-    instruction: "Match the action to the correct situation! (Cocokkan setiap tindakan dengan situasi yang tepat!)",
+    instruction: "Find the correct answer for each question. Match them quickly to win! (Temukan jawaban yang tepat untuk setiap pertanyaan. Pasangkan dengan cepat untuk menang!)",
     embedUrl: "https://wordwall.net/embed/play/110988/497/683"
   },
   {
     title: "Quiz Flying Fruit",
-    instruction: "Listen to the audio carefully, then choose the best answer to understand the meaning! (Dengarkan audio dengan seksama, lalu pilih jawaban terbaik untuk memahami artinya!)",
+    instruction: "Smash the correct flying fruit to answer the question! Be careful with the wrong ones. (Hancurkan buah terbang yang benar untuk menjawab pertanyaan! Berhati-hatilah dengan buah yang salah.)",
     embedUrl: "https://wordwall.net/embed/play/110994/146/157"
   },
   {
-    title: "Game SHINING Flight",
-    instruction: "Run through the maze to find the right answer! Avoid the traps and choose the action based on the song! (Berlari melalui labirin untuk menemukan jawaban yang benar! Hindari jebakan dan pilih tindakan berdasarkan lagu!)",
-    embedUrl: "https://wordwall.net/embed/play/111000/840/568"
+    title: "Game SHINING Road",
+    instruction: "Drive your car to the correct answer! Avoid the wrong answers to keep your car safe. (Arahkan mobilmu ke jawaban yang benar! Hindari jawaban yang salah agar mobilmu tetap aman.)",
+    embedUrl: "https://wordwall.net/embed/play/111117/320/202"
   }
 ];
 
@@ -75,7 +75,7 @@ export default function EasyMission() {
       games={makefriendsGames}
       nextLevel="Medium"
       nextLevelHref="/music-map/medium"
-      nextSongTitle="You'll Be In My Heart"
+      nextSongTitle="Count On Me"
     />
   );
 }
