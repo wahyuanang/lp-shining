@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Sparkles, Heart, Music } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,8 +12,10 @@ export default function Footer() {
 
         <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
           <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-shining-purple to-shining-violet flex items-center justify-center mb-6 shadow-xl border border-white/10">
-            <Sparkles size={32} className="text-white" />
+            {/* <Sparkles size={32} className="text-white" /> */}
+            <Image src="/logo_img.png" alt="Logo" width={64} height={64}/>
           </div>
+
           
           <h2 className="text-3xl font-extrabold text-white mb-6">SHINING</h2>
           <p className="text-center max-w-md mx-auto mb-10 text-white/60">
@@ -23,6 +26,7 @@ export default function Footer() {
             <Link href="/" className="hover:text-shining-yellow transition-colors font-medium">Home</Link>
             <Link href="/materials" className="hover:text-shining-yellow transition-colors font-medium">Materials</Link>
             <Link href="/music-map" className="hover:text-shining-yellow transition-colors font-medium">Music Map</Link>
+            <Link href="/help" className="hover:text-shining-yellow transition-colors font-medium">Help</Link>
             <Link href="/about" className="hover:text-shining-yellow transition-colors font-medium">About Us</Link>
           </div>
           

@@ -133,7 +133,7 @@ const faqs = [
   },
   {
     q: "Lagu apa yang digunakan di aplikasi ini?",
-    a: "Aplikasi ini menggunakan lagu \"Count On Me\" karya Bruno Mars — sebuah lagu dengan lirik positif tentang persahabatan yang dipilih khusus untuk materi Bahasa Inggris kelas 7.",
+    a: "Aplikasi ini menggunakan lagu This Is The Way We Make Friends, Count on Me, A Million Dreams — sebuah lagu dengan lirik positif tentang persahabatan yang dipilih khusus untuk materi Bahasa Inggris kelas 7.",
   },
   {
     q: "Apakah perlu login atau daftar akun?",
@@ -200,7 +200,7 @@ export default function HelpPage() {
           {[
             { icon: BookOpen, label: "1 Halaman Materi", sub: "Teori lengkap", color: "text-violet-600", bg: "bg-violet-50 border-violet-100" },
             { icon: Map, label: "3 Level Kuis", sub: "Easy, Medium, Hard", color: "text-amber-600", bg: "bg-amber-50 border-amber-100" },
-            { icon: Music2, label: "1 Lagu Pilihan", sub: "Count On Me", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-100" },
+            { icon: Music2, label: "3 Lagu Pilihan", sub: "This Is The Way We Make Friends, Count on Me, A Million Dreams", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-100" },
             { icon: Star, label: "Gratis & No Login", sub: "Langsung belajar!", color: "text-rose-600", bg: "bg-rose-50 border-rose-100" },
           ].map((item, i) => (
             <motion.div
@@ -398,7 +398,7 @@ export default function HelpPage() {
               <h3 className="text-xl font-bold mb-2 text-rose-300">About Us</h3>
               <p className="text-white/50 text-sm mb-4">Tentang pengembang & platform</p>
               <div className="space-y-2">
-                {["Visi & Misi Platform", "Profil Pengembang", "Kontak & Sosial Media", "Testimonial Pengguna"].map(item => (
+                {["Visi & Misi Platform", "Profil Pengembang", "Kontak & Sosial Media"].map(item => (
                   <div key={item} className="flex items-center gap-2 text-xs text-white/60">
                     <ChevronRight size={12} className="text-rose-400" />
                     {item}
