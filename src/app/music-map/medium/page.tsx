@@ -59,14 +59,14 @@ const mediumGames: Game[] = [
     embedUrl: "https://wordwall.net/embed/play/110259/763/869"
   },
   {
-    title: "Game SHINING Flight",
-    instruction: "Fly your plane to the correct answer! Dodge the wrong answers so your plane doesn't crash. (Arahkan pesawatmu ke jawaban yang benar! Hindari awan jawaban yang salah agar pesawatmu tidak hancur.)",
-    embedUrl: "https://wordwall.net/embed/play/110319/217/789"
+    title: "Hungry Dino: Leaf Muncher",
+    instruction: "Move the dinosaur's head to eat the leaf with the correct answer! Don't eat the wrong leaves. (Gerakkan kepala dinosaurus untuk memakan daun dengan jawaban yang benar! Jangan makan daun yang salah.)",
+    embedUrl: "https://wordwall.net/embed/play/110319/217/462"
   },
   {
     title: "Maze Chase",
     instruction: "Run to the correct answer and avoid the enemies! (Berlarilah ke jawaban yang benar dan hindari para musuh!)",
-    embedUrl: "https://wordwall.net/embed/play/110262/222/957"
+    embedUrl: "https://wordwall.net/embed/play/110262/222/880"
   }
 ];
 
@@ -77,7 +77,7 @@ export default function MediumMission() {
       songTitle="Count On Me"
       youtubeId="V-ivEAzBiXI"
       vocabulary={mediumVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=17839873"
+      quizEmbedUrl="https://wayground.com/join?gc=48609153"
       lyrics={mediumLyrics}
       games={mediumGames}
       nextLevel="Hard"
