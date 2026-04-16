@@ -54,17 +54,17 @@ const mediumLyrics: LyricLine[] = [
 
 const mediumGames: Game[] = [
   {
-    title: "A True Friend vs Not a True Friend",
+    title: "Game A True Friend vs Not a True Friend",
     instruction: "Drag and drop each statement into the correct box! Decide which actions show a true friend and which do not. (Tarik dan lepaskan setiap pernyataan ke dalam kotak yang benar! Tentukan tindakan mana yang menunjukkan teman sejati dan mana yang tidak.)",
     embedUrl: "https://wordwall.net/embed/play/110259/763/869"
   },
   {
-    title: "Hungry Dino: Leaf Muncher",
+    title: "Game Hungry Dino: Leaf Muncher",
     instruction: "Move the dinosaur's head to eat the leaf with the correct answer! Don't eat the wrong leaves. (Gerakkan kepala dinosaurus untuk memakan daun dengan jawaban yang benar! Jangan makan daun yang salah.)",
     embedUrl: "https://wordwall.net/embed/play/110319/217/462"
   },
   {
-    title: "Maze Chase",
+    title: "Game Maze Chase",
     instruction: "Run to the correct answer and avoid the enemies! (Berlarilah ke jawaban yang benar dan hindari para musuh!)",
     embedUrl: "https://wordwall.net/embed/play/110262/222/880"
   }

@@ -47,12 +47,12 @@ const makefriendscLyrics: LyricLine[] = [
 
 const makefriendsGames: Game[] = [
   {
-    title: "Find a Match",
+    title: "Game Find a Match",
     instruction: "Find the correct answer for each question. Match them quickly to win! (Temukan jawaban yang tepat untuk setiap pertanyaan. Pasangkan dengan cepat untuk menang!)",
     embedUrl: "https://wordwall.net/embed/play/110988/497/683"
   },
   {
-    title: "Quiz Flying Fruit",
+    title: "Game Quiz Flying Fruit",
     instruction: "Smash the correct flying fruit to answer the question! Be careful with the wrong ones. (Hancurkan buah terbang yang benar untuk menjawab pertanyaan! Berhati-hatilah dengan buah yang salah.)",
     embedUrl: "https://wordwall.net/embed/play/110994/146/157"
   },

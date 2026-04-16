@@ -251,19 +251,18 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                  <div key={idx} className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-700">{game.title}</h3>
-                       <div className="text-sm mt-2 bg-slate-50 px-3 py-2 rounded-xl border border-slate-100 inline-block">
+                       <div className="mt-2 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
                          {(() => {
                            const match = game.instruction.match(/^(.*?)(\(.*\))$/);
                            if (match) {
                              return (
-                               <>
-                                 <span className="font-bold text-slate-800">✨ INSTRUCTION: {match[1].trim()}</span>
-                                 {" "}
-                                 <span className="font-medium text-emerald-600/80 italic">{match[2]}</span>
-                               </>
+                               <div className="flex flex-col gap-1.5">
+                                 <p className="font-bold text-slate-900 text-base leading-snug">✨ INSTRUCTION: {match[1].trim()}</p>
+                                 <p className="font-medium text-orange-500 text-sm italic">{match[2]}</p>
+                               </div>
                              );
                            }
-                           return <span className="font-bold text-slate-800">✨ {game.instruction}</span>;
+                           return <p className="font-bold text-slate-900 text-base leading-snug">✨ {game.instruction}</p>;
                          })()}
                        </div>
                     </div>
