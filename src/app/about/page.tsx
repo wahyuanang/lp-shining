@@ -38,14 +38,14 @@ export default function About() {
                <Sparkles size={16} className="fill-shining-yellow" />
                Behind the Platform
             </div>
-            <h1 className="text-6xl lg:text-8xl text-white font-black tracking-tight mb-4 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl lg:text-8xl text-white font-black tracking-tight mb-4 drop-shadow-lg">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-shining-purple to-shining-violet">SHINING</span>
             </h1>
           </motion.div>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-            className="text-white/80 text-xl lg:text-2xl font-medium max-w-2xl leading-relaxed"
+            className="text-white/80 text-lg md:text-xl lg:text-2xl font-medium max-w-2xl leading-relaxed"
           >
             Membawa kebahagiaan sejati dalam perjalanan belajar bahasa Inggris melalui melodi dan lirik lagu favoritmu.
           </motion.p>
@@ -56,13 +56,13 @@ export default function About() {
       <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full relative z-10 -mt-10 mb-24">
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-          className="bg-white rounded-[3rem] p-8 lg:p-12 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center relative overflow-hidden"
+          className="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-8 lg:p-12 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-shining-purple/10 blur-[80px] rounded-full" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-shining-yellow/10 blur-[80px] rounded-full" />
           
           <motion.div variants={fadeInUp} className="text-center mb-16 relative z-10">
-             <h2 className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4">Tujuan Pengembangan</h2>
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4 px-2">Tujuan Pengembangan</h2>
              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                SHINING lahir dari kegelisahan bahwa belajar bahasa asing seringkali dianggap kaku dan membosankan. Kami ingin merubah narasi tersebut!
              </p>
@@ -107,44 +107,44 @@ export default function About() {
       </section>
 
       {/* DEVELOPER PROFILE */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto w-full mb-16 relative">
+      <section className="px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full mb-16 relative">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-          className="bg-shining-dark rounded-[3rem] p-1 border-4 border-shining-violet/20 shadow-2xl relative overflow-hidden"
+          className="bg-shining-dark rounded-[2rem] lg:rounded-[3rem] p-1 border-2 md:border-4 border-shining-violet/20 shadow-2xl relative overflow-hidden"
         >
           {/* Decorative Blooms */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#1DB954]/20 via-shining-purple/40 to-shining-dark blur-3xl rounded-full z-0 pointer-events-none" />
           <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-shining-yellow/10 blur-[100px] rounded-full z-0 pointer-events-none" />
           
-          <div className="bg-black/40 backdrop-blur-xl rounded-[2.8rem] p-8 lg:p-16 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="bg-black/40 backdrop-blur-xl rounded-[1.8rem] lg:rounded-[2.8rem] p-6 sm:p-8 lg:p-16 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
              
              {/* Avatar Image Frame */}
-             <motion.div variants={fadeInUp} className="relative w-64 h-64 md:w-80 md:h-80 shrink-0 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-shining-purple to-shining-yellow rounded-[3rem] rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-80" />
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-[3rem] border border-white/20 -rotate-3 group-hover:-rotate-6 transition-transform duration-500" />
-                <div className="absolute inset-2 bg-gradient-to-br from-slate-200 to-slate-400 rounded-[2.5rem] overflow-hidden shadow-2xl flex items-center justify-center bg-gray-300">
+             <motion.div variants={fadeInUp} className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 shrink-0 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-shining-purple to-shining-yellow rounded-[2.5rem] lg:rounded-[3rem] rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-80" />
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-[2.5rem] lg:rounded-[3rem] border border-white/20 -rotate-3 group-hover:-rotate-6 transition-transform duration-500" />
+                <div className="absolute inset-2 bg-gradient-to-br from-slate-200 to-slate-400 rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl flex items-center justify-center bg-gray-300">
                    {/* Placeholder Icon */}
                    <User size={100} className="text-gray-400 opacity-50 absolute" />
                    <Image 
-                     src="/profile-img.jpeg" 
+                     src="/profile.jpeg" 
                      alt="Sri Puja" 
                      fill 
                      className="object-cover transition-transform duration-500 group-hover:scale-105" 
                    /> 
                 </div>
                 {/* Floating Role Badge */}
-                <div className="absolute -bottom-6 -right-6 bg-shining-yellow text-shining-dark font-black px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 rotate-12 group-hover:scale-110 transition-transform">
-                  <Code size={20} /> Creator
+                <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-shining-yellow text-shining-dark font-black px-4 py-2 lg:px-6 lg:py-3 rounded-2xl shadow-xl flex items-center gap-1.5 lg:gap-2 text-sm lg:text-base rotate-12 group-hover:scale-110 transition-transform">
+                  <Code size={16} className="lg:w-5 lg:h-5" /> Creator
                 </div>
              </motion.div>
 
              {/* Profile Detail */}
              <div className="text-center lg:text-left flex-1 text-white">
-                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
-                   <GraduationCap size={14} /> Educational Technology, UNY
+                <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-4 border border-white/10 text-center mx-auto lg:mx-0">
+                   <GraduationCap size={14} className="shrink-0" /> Educational Technology, UNY
                 </motion.div>
                 
-                <motion.h2 variants={fadeInUp} className="text-5xl lg:text-7xl font-title text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 tracking-wide mb-2 drop-shadow-md">
+                <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl lg:text-7xl font-title text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 tracking-wide mb-2 drop-shadow-md">
                   Sri Puja Yanti
                 </motion.h2>
                 
@@ -156,27 +156,27 @@ export default function About() {
 
                 <motion.div variants={fadeInUp} className="relative">
                   {/* Quote Icon Background */}
-                  <span className="absolute -top-6 -left-6 text-6xl text-white/5 font-serif font-black">"</span>
-                  <p className="text-white/90 text-xl lg:text-2xl italic leading-relaxed font-medium">
-                    "Saya percaya bahwa pendidikan tidak seharusnya kaku. Jika siswa bisa dengan mudah menghafal lirik lagu favoritnya dan sangat antusias menyelesaikan tantangan sebuah game, mengapa energi itu tidak kita satukan? Platform ini saya rancang untuk menggabungkan harmoni musik dan keseruan bermain. Di sini, menguasai kosakata dan tata bahasa Inggris bukan lagi beban hafalan, melainkan sebuah pembelajaran yang menyenangkan."
+                  <span className="absolute -top-4 -left-2 md:-top-6 md:-left-6 text-4xl md:text-6xl text-white/5 font-serif font-black">"</span>
+                  <p className="text-white/90 text-sm md:text-base lg:text-lg italic leading-relaxed font-medium px-2 md:px-0">
+                    "Halo guys! Belajar itu nggak harus kaku, lho. Kalau kita gampang hafal lirik lagu atau semangat nyelesain misi game, kenapa keseruannya nggak dibawa ke belajar aja? Nah, energi itu yang aku bawa ke sini. Lewat SHINING, aku nyatuin asyiknya musik dan serunya main game. Jadi, belajar bahasa Inggris bukan lagi soal hafalan pusing, tapi murni pengalaman yang seru!"
                   </p>
                 </motion.div>
                 
-                <motion.div variants={fadeInUp} className="mt-10 flex flex-wrap gap-4 w-full justify-center lg:justify-start">
+                <motion.div variants={fadeInUp} className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 w-full justify-center lg:justify-start">
                   <a 
-                    href="mailto:[EMAIL_ADDRESS]"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold transition-all hover:scale-105 shadow-sm"
+                    href="mailto:sripuja.2022@student.uny.ac.id"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 lg:px-8 lg:py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold transition-all hover:scale-105 shadow-sm text-sm lg:text-base justify-center flex-1 sm:flex-none"
                   >
-                    <Mail size={18} className="text-shining-yellow" />
-                    <span>sripuja.2022@student.uny.ac.id</span>
+                    <Mail size={18} className="text-shining-yellow shrink-0" />
+                    <span>Email Me</span>
                   </a>
                   <a 
                     href="https://www.instagram.com/srpujayanti/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-bold transition-all hover:scale-105 shadow-lg"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 lg:px-8 lg:py-3.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-bold transition-all hover:scale-105 shadow-lg text-sm lg:text-base justify-center flex-1 sm:flex-none"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                     <span>@srpujayanti</span>
                   </a>
                 </motion.div>

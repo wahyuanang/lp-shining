@@ -1,16 +1,21 @@
 import MissionLayout, { Vocabulary, LyricLine, Game } from "@/components/MissionLayout";
 
 const makefriendsVocab: Vocabulary[] = [
-  { word: "Make friends", meaning: "Berteman / Membuat teman", pronunciation: "meik frendz (/meɪk frendz/)" },
-  { word: "Say hello", meaning: "Mengucapkan salam / Menyapa", pronunciation: "sei he-low (/seɪ həˈloʊ/)" },
-  { word: "Share", meaning: "Berbagi", pronunciation: "syer (/ʃer/)" },
-  { word: "Toys", meaning: "Mainan", pronunciation: "toyz (/tɔɪz/)" },
-  { word: "Take turns", meaning: "Bergantian / Bergiliran", pronunciation: "teik ternz (/teɪk tɜːrnz/)" },
-  { word: "Play", meaning: "Bermain", pronunciation: "plei (/pleɪ/)" },
-  { word: "Game", meaning: "Permainan", pronunciation: "geim (/ɡeɪm/)" },
-  { word: "Sing", meaning: "Menyanyi", pronunciation: "sing (/sɪŋ/)" },
-  { word: "Together", meaning: "Bersama-sama", pronunciation: "tu-ge-ther (/təˈɡeð.ər/)" },
-  { word: "Say goodbye", meaning: "Mengucapkan selamat tinggal / Pamit", pronunciation: "sei gud-bai (/seɪ ɡʊdˈbaɪ/)" },
+  { word: "Make", meaning: "(Verb) Membuat / Menjalin", pronunciation: "meik" },
+  { word: "Friends", meaning: "(Noun) Teman-teman", pronunciation: "frends" },
+  { word: "Way", meaning: "(Noun) Cara / Jalan", pronunciation: "wei" },
+  { word: "Together", meaning: "(Adverb) Bersama-sama", pronunciation: "tu-ge-der" },
+  { word: "Play", meaning: "(Verb) Bermain", pronunciation: "plei" },
+  { word: "Share", meaning: "(Verb) Berbagi / Meminjamkan", pronunciation: "syer" },
+  { word: "Take turns", meaning: "(Phrase) Bergiliran / Gantian", pronunciation: "teik terns" },
+  { word: "Say", meaning: "(Verb) Mengucapkan / Berkata", pronunciation: "sei" },
+  { word: "Hello", meaning: "(Phrase) Halo", pronunciation: "he-lou" },
+  { word: "Goodbye", meaning: "(Phrase) Selamat Tinggal", pronunciation: "gud-bai" },
+  { word: "Toys", meaning: "(Noun) Mainan", pronunciation: "tois" },
+  { word: "Sing", meaning: "(Verb) Menyanyi", pronunciation: "sing" },
+  { word: "Song", meaning: "(Noun) Lagu", pronunciation: "song" },
+  { word: "We", meaning: "(Pronoun) Kita / Kami", pronunciation: "wi" },
+  { word: "Our", meaning: "(Determiner) Milik kita / Milik kami", pronunciation: "a-wer" },
 ];
 
 const makefriendscLyrics: LyricLine[] = [

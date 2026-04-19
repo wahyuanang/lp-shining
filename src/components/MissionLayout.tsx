@@ -33,9 +33,10 @@ interface MissionLayoutProps {
   nextLevel?: "Medium" | "Hard";
   nextLevelHref?: string;
   nextSongTitle?: string;
+  youtubeScale?: number;
 }
 
-export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games, nextLevel, nextLevelHref, nextSongTitle }: MissionLayoutProps) {
+export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games, nextLevel, nextLevelHref, nextSongTitle, youtubeScale = 1 }: MissionLayoutProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -157,15 +158,16 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
              </h2>
            </div>
            <div className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100">
-              <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-slate-900">
+           <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-slate-900 border border-gray-100 shadow-sm flex items-center justify-center">
                 <iframe 
-                  src={`https://www.youtube.com/embed/${youtubeId}`} 
+                  src={`https://www.youtube.com/embed/${youtubeId}?rel=0&showinfo=0`} 
                   title="YouTube video player" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"
+                  style={youtubeScale !== 1 ? { transform: `scale(${youtubeScale})`, transformOrigin: 'center center' } : undefined}
                 ></iframe>
               </div>
            </div>
@@ -216,7 +218,20 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                             {item.word} 
                             {item.pronunciation && <span className="text-sm font-medium text-emerald-600/70 bg-emerald-100/50 px-2 py-0.5 rounded-full">{item.pronunciation}</span>}
                           </p>
-                          <p className="text-slate-500 text-sm mt-1">{item.meaning}</p>
+                          <p className="text-slate-500 text-sm mt-1">
+                            {(() => {
+                              const match = item.meaning.match(/^(\([^)]+\))\s*(.*)$/);
+                              if (match) {
+                                return (
+                                  <>
+                                    <span className="italic mr-1 text-slate-400">{match[1]}</span>
+                                    {match[2]}
+                                  </>
+                                );
+                              }
+                              return item.meaning;
+                            })()}
+                          </p>
                         </div>
                         {/* Audio play button */}
                         <button 

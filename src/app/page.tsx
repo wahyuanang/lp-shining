@@ -69,7 +69,7 @@ export default function Home() {
           </motion.div>
           
           <motion.div variants={fadeInUp} className="relative">
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-shining-dark tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-shining-dark tracking-tight leading-[1.1] mb-6">
               Learning to <br className="hidden lg:block"/> read is hard, <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-shining-purple to-shining-violet">
                 but we make it shining!
@@ -77,7 +77,7 @@ export default function Home() {
             </h1>
           </motion.div>
 
-          <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 max-w-xl leading-relaxed">
+          <motion.p variants={fadeInUp} className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-xl leading-relaxed">
             <span className="font-bold text-shining-purple">SHINING</span> is a song-based English learning platform that helps students understand vocabulary, the meaning of lyrics, and moral messages through interactive activities.
           </motion.p>
           
@@ -131,10 +131,10 @@ export default function Home() {
           <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-yellow/20 text-yellow-700 font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-shining-yellow/30">
             Why It Works
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4">
+          <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4 px-2">
             Why Song Lyrics?
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-gray-600 text-sm sm:text-lg max-w-2xl mx-auto px-4">
             Discover the science-backed benefits of learning English through music in an engaging way.
           </motion.p>
         </motion.div>
@@ -149,27 +149,27 @@ export default function Home() {
           {/* Card 1: Span 2 cols */}
           <motion.div variants={fadeInUp} className="md:col-span-2 bg-gradient-to-br from-shining-purple to-shining-violet rounded-[2.5rem] p-8 md:p-10 text-white relative overflow-hidden group shadow-[0_8px_30px_rgb(91,33,182,0.2)]">
             <div className="absolute -right-8 -top-8 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-            <Sparkles size={40} className="mb-6 text-shining-yellow" />
-            <h3 className="text-3xl font-bold mb-4">Fun Learning</h3>
-            <p className="text-white/80 text-lg leading-relaxed max-w-md">
+            <Sparkles size={32} className="mb-4 sm:mb-6 text-shining-yellow sm:w-10 sm:h-10" />
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Fun Learning</h3>
+            <p className="text-white/80 text-sm sm:text-lg leading-relaxed max-w-md">
               Songs make the learning process more enjoyable, exciting, and less rigid than traditional methods. Enjoying the process is very important! 
             </p>
           </motion.div>
 
           {/* Card 2: 1 Col */}
           <motion.div variants={fadeInUp} className="bg-white border rounded-[2.5rem] p-8 md:p-10 hover:shadow-xl transition-shadow group flex flex-col justify-center">
-            <Headphones size={36} className="mb-6 text-purple-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform" />
-            <h3 className="text-2xl font-bold text-shining-dark mb-3">Improve Pronunciation</h3>
-            <p className="text-gray-500 text-base leading-relaxed">
+            <Headphones size={28} className="mb-4 sm:mb-6 text-purple-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform sm:w-9 sm:h-9" />
+            <h3 className="text-xl sm:text-2xl font-bold text-shining-dark mb-2 sm:mb-3">Improve Pronunciation</h3>
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
               Practice pronunciation in a natural way—like a fun brain exercise—by following the singer’s original lyrics.
             </p>
           </motion.div>
 
           {/* Card 3: 1 Col */}
           <motion.div variants={fadeInUp} className="bg-white border rounded-[2.5rem] p-8 md:p-10 hover:shadow-xl transition-shadow group flex flex-col justify-center">
-            <Music size={36} className="mb-6 text-blue-500 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
-            <h3 className="text-2xl font-bold text-shining-dark mb-3">Suitable for Teens</h3>
-            <p className="text-gray-500 text-base leading-relaxed">
+            <Music size={28} className="mb-4 sm:mb-6 text-blue-500 group-hover:scale-110 group-hover:rotate-6 transition-transform sm:w-9 sm:h-9" />
+            <h3 className="text-xl sm:text-2xl font-bold text-shining-dark mb-2 sm:mb-3">Suitable for Teens</h3>
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
               The song lyrics reflect the lives of today’s teenagers, making them relevant to their daily lives. 
             </p>
           </motion.div>
@@ -177,12 +177,12 @@ export default function Home() {
           {/* Card 4: Span 2 Cols with Yellow accent */}
           <motion.div variants={fadeInUp} className="md:col-span-2 bg-shining-yellow/10 border border-shining-yellow/30 rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden group hover:bg-shining-yellow/20 transition-colors">
             <div className="flex flex-col md:flex-row md:items-center gap-8 relative z-10">
-              <div className="w-16 h-16 shrink-0 bg-white rounded-full flex items-center justify-center shadow-md">
-                 <BookA size={32} className="text-yellow-600" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 bg-white rounded-full flex items-center justify-center shadow-md">
+                 <BookA size={24} className="text-yellow-600 sm:w-8 sm:h-8" />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-shining-dark mb-3">Easy to Remember</h3>
-                <p className="text-yellow-800 leading-relaxed text-lg max-w-2xl">
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-shining-dark mb-2 sm:mb-3">Easy to Remember</h3>
+                <p className="text-yellow-800 leading-relaxed text-sm sm:text-lg max-w-2xl break-words">
                   The repetition of the lyrics (chorus) and catchy melodies makes it easier to memorize grammatical structures more quickly.
                 </p>
               </div>
@@ -205,8 +205,8 @@ export default function Home() {
             variants={staggerContainer}
             className="text-center mb-12 relative z-10"
            >
-               <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold mb-4">Main Features</motion.h2>
-               <motion.p variants={fadeInUp} className="text-white/80 text-lg max-w-2xl mx-auto">
+               <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-3 sm:mb-4">Main Features</motion.h2>
+               <motion.p variants={fadeInUp} className="text-white/80 text-sm sm:text-lg max-w-2xl mx-auto px-4">
                  We designed an interactive learning flow that guides you step-by-step to master English vocabulary through your favorite songs.
                </motion.p>
            </motion.div>
@@ -314,13 +314,13 @@ export default function Home() {
             <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-yellow/20 text-yellow-700 font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-shining-yellow/30">
               Choose Your Flow
             </motion.span>
-            <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-6 leading-tight">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4 sm:mb-6 leading-tight">
               Special Learning Level <br/> For You
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-8">
-              SHINING offers song difficulty levels ranging from <span className="font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-md">Easy</span>, <span className="font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">Medium</span>, dan <span className="font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-md">Hard</span> so you can learn at your own pace—not too easy, not too hard, but definitely fun! <br/><br/> Let's enjoy learning with music!
+            <motion.p variants={fadeInUp} className="text-gray-600 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8">
+              SHINING offers song difficulty levels ranging from <span className="font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-md break-keep">Easy</span>, <span className="font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md break-keep">Medium</span>, dan <span className="font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-md break-keep">Hard</span> so you can learn at your own pace—not too easy, not too hard, but definitely fun! <br className="hidden sm:block" /><br className="hidden sm:block" /> Let's enjoy learning with music!
             </motion.p>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="flex justify-center sm:justify-start">
                <Link href="/music-map" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-shining-dark border border-gray-200 shadow-sm hover:shadow-lg hover:border-shining-violet transition-all group overflow-hidden relative">
                  <span className="relative z-10">Explore Music Map</span>
                  <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -367,10 +367,10 @@ export default function Home() {
              <motion.span variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full bg-shining-yellow/20 text-yellow-700 font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-shining-yellow/30">
                 Testimonials
              </motion.span>
-             <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-extrabold text-shining-dark mb-4">
+             <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-shining-dark mb-3 sm:mb-4">
                What They Say?
              </motion.h2>
-             <motion.p variants={fadeInUp} className="text-gray-600 text-lg">
+             <motion.p variants={fadeInUp} className="text-gray-600 text-sm sm:text-lg">
                Hear from students who transformed their English learning journey using SHINING map levels.
              </motion.p>
           </div>

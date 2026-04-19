@@ -1,14 +1,28 @@
 import MissionLayout, { Vocabulary, LyricLine, Game } from "@/components/MissionLayout";
 
 const mediumVocab: Vocabulary[] = [
-  { word: "Lost", meaning: "Tersesat / Hilang", pronunciation: "lost (/lɔːst/)" },
-  { word: "Middle", meaning: "Tengah", pronunciation: "mi-dl (/ˈmɪd.əl/)" },
-  { word: "Sea", meaning: "Laut", pronunciation: "sii (/siː/)" },
-  { word: "Made of", meaning: "Terdiri dari / Terbuat dari (Dalam lagu ini bermakna: Karakter asli / Ketangguhan kita)", pronunciation: "meid of (/meɪd ʌv/)" },
-  { word: "In need", meaning: "Dalam kesulitan / Membutuhkan bantuan", pronunciation: "in niid (/ɪn niːd/)" },
-  { word: "Cry on", meaning: "Menangis (bersandar)", pronunciation: "krai on (/kraɪ ɒn/)" },
-  { word: "Let go", meaning: "Melepaskan", pronunciation: "let gou (/let ɡoʊ/)" },
-  { word: "Fall asleep", meaning: "Tertidur", pronunciation: "fol e-slip (/fɔːl əˈsliːp/)" },
+  { word: "You", meaning: "(Pronoun) Kamu", pronunciation: "yu" },
+  { word: "Me", meaning: "(Pronoun) Aku (sebagai objek)", pronunciation: "mi" },
+  { word: "Your", meaning: "(Determiner) Milikmu", pronunciation: "yor" },
+  { word: "In", meaning: "(Preposition) Di dalam / Di", pronunciation: "in" },
+  { word: "On", meaning: "(Preposition) Di atas / Pada", pronunciation: "on" },
+  { word: "Find", meaning: "(Verb) Menemukan", pronunciation: "faind" },
+  { word: "Sail", meaning: "(Verb) Berlayar", pronunciation: "seil" },
+  { word: "Guide", meaning: "(Verb) Memandu / Menuntun", pronunciation: "gaid" },
+  { word: "Cry", meaning: "(Verb) Menangis", pronunciation: "krai" },
+  { word: "Stuck", meaning: "(Adjective) Terjebak", pronunciation: "stak" },
+  { word: "Lost", meaning: "(Adjective) Tersesat / Hilang", pronunciation: "lost" },
+  { word: "Middle", meaning: "(Noun) Tengah", pronunciation: "mi-dl" },
+  { word: "Sea", meaning: "(Noun) Laut", pronunciation: "sii" },
+  { word: "Dark", meaning: "(Noun/Adjective) Gelap / Kegelapan", pronunciation: "daak" },
+  { word: "Shoulder", meaning: "(Noun) Bahu / Pundak", pronunciation: "syol-der" },
+  { word: "Count on", meaning: "(Phrase) Mengandalkan (seseorang)", pronunciation: "kaunt-on" },
+  { word: "In need", meaning: "(Phrase) Sedang kesulitan / Membutuhkan bantuan", pronunciation: "in-niid" },
+  { word: "Tossing and turning", meaning: "(Phrase) Gelisah (bolak-balik badan) saat mencoba tidur", pronunciation: "to-sing en ter-ning" },
+  { word: "Supposed to do", meaning: "(Phrase) Seharusnya dilakukan", pronunciation: "se-pos tu du" },
+  { word: "Made of", meaning: "(Phrase) Terbuat dari / Karakter asli", pronunciation: "meid of" },
+  { word: "Let go", meaning: "(Phrase) Melepaskan", pronunciation: "let you" },
+  { word: "Fall asleep", meaning: "(Phrase) Tertidur", pronunciation: "fol e-slip" },
 ];
 
 const mediumLyrics: LyricLine[] = [
