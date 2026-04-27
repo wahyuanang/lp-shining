@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import confetti from "canvas-confetti";
 
 export interface Vocabulary {
@@ -37,6 +37,50 @@ interface MissionLayoutProps {
 }
 
 export default function MissionLayout({ level, songTitle, youtubeId, vocabulary, quizEmbedUrl, lyrics, games, nextLevel, nextLevelHref, nextSongTitle, youtubeScale = 1 }: MissionLayoutProps) {
+  const quizContainerRef = useRef<HTMLDivElement>(null);
+  const [isQuizFullscreen, setIsQuizFullscreen] = useState(false);
+
+  const handleQuizFullscreen = () => {
+    const el = quizContainerRef.current;
+    if (!el) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const doc = document as any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const elAny = el as any;
+    const isFs = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
+    if (!isFs) {
+      if (elAny.requestFullscreen) {
+        elAny.requestFullscreen().catch(() => {});
+      } else if (elAny.webkitRequestFullscreen) {
+        // iOS Safari / older Safari
+        elAny.webkitRequestFullscreen();
+      } else if (elAny.webkitEnterFullscreen) {
+        // iOS fallback for video elements
+        elAny.webkitEnterFullscreen();
+      }
+    } else {
+      if (doc.exitFullscreen) {
+        doc.exitFullscreen().catch(() => {});
+      } else if (doc.webkitExitFullscreen) {
+        doc.webkitExitFullscreen();
+      }
+    }
+  };
+
+  useEffect(() => {
+    const onFsChange = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const doc = document as any;
+      setIsQuizFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement));
+    };
+    document.addEventListener("fullscreenchange", onFsChange);
+    document.addEventListener("webkitfullscreenchange", onFsChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", onFsChange);
+      document.removeEventListener("webkitfullscreenchange", onFsChange);
+    };
+  }, []);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -272,12 +316,12 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                            if (match) {
                              return (
                                <div className="flex flex-col gap-1.5">
-                                 <p className="font-bold text-slate-900 text-base leading-snug">✨ INSTRUCTION: {match[1].trim()}</p>
+                                 <p className="font-bold text-slate-900 text-base leading-snug">Ã¢Å“Â¨ INSTRUCTION: {match[1].trim()}</p>
                                  <p className="font-medium text-orange-500 text-sm italic">{match[2]}</p>
                                </div>
                              );
                            }
-                           return <p className="font-bold text-slate-900 text-base leading-snug">✨ {game.instruction}</p>;
+                           return <p className="font-bold text-slate-900 text-base leading-snug">Ã¢Å“Â¨ {game.instruction}</p>;
                          })()}
                        </div>
                     </div>
@@ -318,28 +362,45 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
              </h2>
            </div>
            
-           <div className="bg-slate-900 rounded-[2rem] p-2 shadow-xl border border-slate-800 overflow-hidden">
-              {quizEmbedUrl ? (
-                <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '8px', minHeight: '635px', background: '#fff', borderRadius: '1.5rem', overflow: 'hidden' }}>
-                  <iframe 
-                    src={quizEmbedUrl} 
-                    title="Wayground Quiz" 
-                    style={{ flex: 1, width: '100%', height: '100%' }} 
-                    frameBorder="0"
-                    allow="microphone; camera; autoplay; clipboard-write; encrypted-media; fullscreen"
-                    allowFullScreen>
-                  </iframe>
-                  <div className="bg-white py-2 text-center text-sm border-t">
-                     <a href="https://wayground.com/admin?source=embedFrame" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">Explore more at Wayground.</a>
-                  </div>
-                </div>
-              ) : (
-                <div className="text-center py-20 text-white/50">
-                  <Trophy size={48} className="mx-auto mb-4 opacity-50" />
-                  <p>Challenge coming soon for this level.</p>
-                </div>
-              )}
-           </div>
+            {/* Challenge Instruction Box */}
+            <div className="mb-4 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
+              <div className="flex flex-col gap-1.5">
+                <p className="font-bold text-slate-900 text-base leading-snug">✨ INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!</p>
+                <p className="font-medium text-blue-600 text-sm italic">(Saat memulai kuis, pastikan kamu mengizinkan akses mikrofon di browsermu agar suaramu bisa terekam dengan baik, ya!)</p>
+              </div>
+            </div>
+
+            <div ref={quizContainerRef} className="bg-slate-900 rounded-[2rem] p-2 shadow-xl border border-slate-800 overflow-hidden">
+               {quizEmbedUrl ? (
+                 <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0px", minHeight: "635px", background: "#fff", borderRadius: "1.5rem", overflow: "hidden" }}>
+                   <div style={{ padding: "8px 16px", background: "#fff", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #f1f5f9", borderRadius: "1.5rem 1.5rem 0 0" }}>
+                     <span style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 500 }}>Wayground Challenge</span>
+                     <button
+                       onClick={handleQuizFullscreen}
+                       style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#3b82f6", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
+                     >
+                       {isQuizFullscreen ? "â›¶ Exit Fullscreen" : "â›¶ Start in fullscreen mode"}
+                     </button>
+                   </div>
+                   <iframe
+                     src={quizEmbedUrl}
+                     title="Wayground Quiz"
+                     style={{ flex: 1, width: "100%", minHeight: "600px", border: "none", display: "block" }}
+                     frameBorder="0"
+                     allow="microphone; camera; autoplay; clipboard-write; encrypted-media; fullscreen"
+                     allowFullScreen>
+                   </iframe>
+                   <div className="bg-white py-2 text-center text-sm border-t">
+                      <a href="https://wayground.com/admin?source=embedFrame" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">Explore more at Wayground.</a>
+                   </div>
+                 </div>
+               ) : (
+                 <div className="text-center py-20 text-white/50">
+                   <Trophy size={48} className="mx-auto mb-4 opacity-50" />
+                   <p>Challenge coming soon for this level.</p>
+                 </div>
+               )}
+            </div>
         </section>
 
         {/* 5. REWARD BANNER */}
@@ -367,8 +428,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                 </h3>
                 <p className="text-slate-600 max-w-md mx-auto mb-8">
                   {alreadyClaimed 
-                    ? "You’ve done a great job on this mission! Your testimonial is now featured on the homepage." 
-                    : "After watching the video, learning the vocabulary, and completing the quiz above, it’s time to claim your prize."}
+                    ? "YouÃ¢â‚¬â„¢ve done a great job on this mission! Your testimonial is now featured on the homepage." 
+                    : "After watching the video, learning the vocabulary, and completing the quiz above, itÃ¢â‚¬â„¢s time to claim your prize."}
                 </p>
                 
                 <button 
@@ -392,7 +453,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
            </div>
         </section>
 
-        {/* 6. NEXT LEVEL / COMPLETION BANNER — only shown after testimonial is claimed */}
+        {/* 6. NEXT LEVEL / COMPLETION BANNER Ã¢â‚¬â€ only shown after testimonial is claimed */}
         <AnimatePresence>
           {alreadyClaimed && nextLevel && nextLevelHref && (
             <motion.section
@@ -427,7 +488,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
           )}
         </AnimatePresence>
 
-        {/* 6b. HARD COMPLETION — only shown after testimonial is claimed */}
+        {/* 6b. HARD COMPLETION Ã¢â‚¬â€ only shown after testimonial is claimed */}
         <AnimatePresence>
           {alreadyClaimed && level === "Hard" && !nextLevel && (
             <motion.section
@@ -447,24 +508,24 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                     transition={{ type: "spring", delay: 0.2, bounce: 0.5 }}
                     className="w-24 h-24 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mb-6 shadow-xl"
                   >
-                    <span className="text-5xl">🏆</span>
+                    <span className="text-5xl">Ã°Å¸Ââ€ </span>
                   </motion.div>
-                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">You&apos;re a SHINING Champion! 🎉</h3>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">You&apos;re a SHINING Champion! Ã°Å¸Å½â€°</h3>
                   <p className="text-white/90 text-lg max-w-lg mx-auto mb-8">
-                    Luar biasa! Kamu telah menyelesaikan <strong>semua level</strong> di SHINING — Easy, Medium, dan Hard. Kamu adalah bintang yang sesungguhnya! ⭐
+                    Luar biasa! Kamu telah menyelesaikan <strong>semua level</strong> di SHINING Ã¢â‚¬â€ Easy, Medium, dan Hard. Kamu adalah bintang yang sesungguhnya! Ã¢Â­Â
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/music-map"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-white text-shining-dark rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg"
                     >
-                      🗺️ Back to Music Map
+                      Ã°Å¸â€”ÂºÃ¯Â¸Â Back to Music Map
                     </Link>
                     <Link
                       href="/"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-white/20 border border-white/30 text-white rounded-full font-bold text-lg hover:scale-105 hover:bg-white/30 transition-all"
                     >
-                      🏠 Back to Home
+                      Ã°Å¸ÂÂ  Back to Home
                     </Link>
                   </div>
                 </div>

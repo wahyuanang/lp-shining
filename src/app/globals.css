@@ -34,9 +34,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  /* iOS Safari fix: prevent text size adjustment */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Better tap highlight on iOS */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS Safari: smooth momentum scrolling */
+* {
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, .font-title {
   font-family: var(--font-title), sans-serif;
   letter-spacing: 0.05em;
+}
+
+/* Fix for iOS Safari: ensure iframes are tappable */
+iframe {
+  border: none;
+  -webkit-overflow-scrolling: touch;
 }

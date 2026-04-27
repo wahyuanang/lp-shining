@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Mouse_Memoirs, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -22,6 +22,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo_img.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#2e1065",
 };
 
 export default function RootLayout({
