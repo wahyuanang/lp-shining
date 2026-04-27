@@ -98,17 +98,17 @@ const hardGames: Game[] = [
   {
     title: "Game Balloon Pop",
     instruction: "Pop the correct balloon to answer the question on the moving train! Be fast and watch out for the trap balloons! (Pecahkan balon yang tepat untuk menjawab pertanyaan di kereta! Bergeraklah cepat dan awas balon jebakan!)",
-    embedUrl: "https://wordwall.net/embed/play/111115/618/408"
+    embedUrl: "https://wordwall.net/embed/play/111115/618/772"
   },
   {
     title: "Game Spin Wheel",
     instruction: "Spin the wheel! Read the question carefully, and answer based on the lyrics or meaning you heard. (Putar rodanya! Baca pertanyaan dengan teliti, dan jawab berdasarkan lirik atau makna yang kamu dengar.)",
-    embedUrl: "https://wordwall.net/embed/play/111071/092/984"
+    embedUrl: "https://wordwall.net/embed/play/111071/092/343"
   },
   {
-    title: "Game Spelling Mission",
-    instruction: "Drag the scrambled letters into the correct order to reveal the hidden word. Spell it perfectly before the time runs out! (Tarik huruf-huruf acak ke urutan yang benar untuk menebak kata tersembunyi. Eja dengan tepat sebelum waktunya habis!)",
-    embedUrl: "https://wordwall.net/embed/play/110323/391/774"
+    title: "Game Crossword",
+    instruction: "Click the box, listen to the audio carefully, and type the word you hear! (Klik kolomnya, dengarkan suaranya dengan baik, lalu ketik kata yang kamu dengar!)",
+    embedUrl: "https://wordwall.net/embed/play/110293/024/721"
   }
 ];
 
@@ -119,7 +119,7 @@ export default function HardMission() {
       songTitle="A Million Dreams"
       youtubeId="a8WCktJkLlY"
       vocabulary={hardVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=39507841"
+      quizEmbedUrl="https://wayground.com/join?gc=176962"
       lyrics={millionDreamsLyrics}
       games={hardGames}
     />

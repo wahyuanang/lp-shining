@@ -54,17 +54,17 @@ const makefriendsGames: Game[] = [
   {
     title: "Game Find a Match",
     instruction: "Find the correct answer for each question. Match them quickly to win! (Temukan jawaban yang tepat untuk setiap pertanyaan. Pasangkan dengan cepat untuk menang!)",
-    embedUrl: "https://wordwall.net/embed/play/110988/497/683"
+    embedUrl: "https://wordwall.net/embed/play/110988/497/750"
   },
   {
     title: "Game Quiz Flying Fruit",
     instruction: "Smash the correct flying fruit to answer the question! Be careful with the wrong ones. (Hancurkan buah terbang yang benar untuk menjawab pertanyaan! Berhati-hatilah dengan buah yang salah.)",
-    embedUrl: "https://wordwall.net/embed/play/110994/146/157"
+    embedUrl: "https://wordwall.net/embed/play/110994/146/127"
   },
   {
     title: "Game SHINING Road",
     instruction: "Drive your car to the correct answer! Avoid the wrong answers to keep your car safe. (Arahkan mobilmu ke jawaban yang benar! Hindari jawaban yang salah agar mobilmu tetap aman.)",
-    embedUrl: "https://wordwall.net/embed/play/111117/320/202"
+    embedUrl: "https://wordwall.net/embed/play/111117/320/738"
   }
 ];
 
@@ -75,7 +75,7 @@ export default function EasyMission() {
       songTitle="This Is The Way We Make Friends"
       youtubeId="AT8qLCmseuE"
       vocabulary={makefriendsVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=55333377&source=liveDashboard"
+      quizEmbedUrl="https://wayground.com/join?gc=616232"
       lyrics={makefriendscLyrics}
       games={makefriendsGames}
       nextLevel="Medium"
