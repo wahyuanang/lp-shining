@@ -41,46 +41,23 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
   const [isQuizFullscreen, setIsQuizFullscreen] = useState(false);
 
   const handleQuizFullscreen = () => {
-    const el = quizContainerRef.current;
-    if (!el) return;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const doc = document as any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const elAny = el as any;
-    const isFs = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
-    if (!isFs) {
-      if (elAny.requestFullscreen) {
-        elAny.requestFullscreen().catch(() => {});
-      } else if (elAny.webkitRequestFullscreen) {
-        // iOS Safari / older Safari
-        elAny.webkitRequestFullscreen();
-      } else if (elAny.webkitEnterFullscreen) {
-        // iOS fallback for video elements
-        elAny.webkitEnterFullscreen();
-      }
-    } else {
-      if (doc.exitFullscreen) {
-        doc.exitFullscreen().catch(() => {});
-      } else if (doc.webkitExitFullscreen) {
-        doc.webkitExitFullscreen();
-      }
-    }
+    setIsQuizFullscreen(true);
+    // Lock body scroll when overlay is open
+    document.body.style.overflow = "hidden";
   };
 
-  useEffect(() => {
-    const onFsChange = () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const doc = document as any;
-      setIsQuizFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement));
-    };
-    document.addEventListener("fullscreenchange", onFsChange);
-    document.addEventListener("webkitfullscreenchange", onFsChange);
-    return () => {
-      document.removeEventListener("fullscreenchange", onFsChange);
-      document.removeEventListener("webkitfullscreenchange", onFsChange);
-    };
-  }, []);
+  const handleExitFullscreen = () => {
+    setIsQuizFullscreen(false);
+    document.body.style.overflow = "";
+  };
 
+  // Close overlay on Escape key
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleExitFullscreen(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testiName, setTestiName] = useState("");
   const [testiMessage, setTestiMessage] = useState("");
@@ -644,6 +621,44 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
           </motion.div>
         )}
       </AnimatePresence>
+      {/* FULLSCREEN QUIZ OVERLAY */}
+      {isQuizFullscreen && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "#000",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {/* Top bar with close button */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", background: "#1e293b", flexShrink: 0 }}>
+            <span style={{ color: "#94a3b8", fontSize: "13px", fontWeight: 500 }}>Wayground Challenge — Fullscreen</span>
+            <button
+              onClick={handleExitFullscreen}
+              style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#ef4444", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/>
+                <path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/>
+              </svg>
+              Exit Fullscreen
+            </button>
+          </div>
+          {/* Iframe taking full remaining space */}
+          <iframe
+            src={quizEmbedUrl}
+            title="Wayground Quiz Fullscreen"
+            style={{ flex: 1, width: "100%", border: "none", display: "block" }}
+            frameBorder="0"
+            allow="microphone; camera; autoplay; clipboard-write; encrypted-media; fullscreen"
+            allowFullScreen
+          />
+        </div>
+      )}
+
 
     </div>
   );
