@@ -194,7 +194,6 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
            </div>
         </section>
 
-        {/* 2. LEARN */}
         <section>
            <div className="flex items-center gap-3 mb-6">
              <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-md">
@@ -271,63 +270,68 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
            </div>
         </section>
 
-        {/* 3. PLAY */}
-        <section>
-           <div className="flex items-center gap-3 mb-6">
-             <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white shadow-md">
-               <span className="font-bold text-sm">3</span>
-             </div>
-             <h2 className="text-2xl font-bold text-slate-800 uppercase flex items-center gap-2">
-               Play <Gamepad2 size={20} className="text-amber-500 fill-amber-500" />
-             </h2>
-           </div>
-           {games && games.length > 0 ? (
-             <div className="flex flex-col gap-8">
-               {games.map((game, idx) => (
-                 <div key={idx} className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-700">{game.title}</h3>
-                       <div className="mt-2 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
-                         {(() => {
-                           const match = game.instruction.match(/^(.*?)(\(.*\))$/);
-                           if (match) {
-                             return (
-                               <div className="flex flex-col gap-1.5">
-                                 <p className="font-bold text-slate-900 text-base leading-snug">Ã¢Å“Â¨ INSTRUCTION: {match[1].trim()}</p>
-                                 <p className="font-medium text-orange-500 text-sm italic">{match[2]}</p>
-                               </div>
-                             );
-                           }
-                           return <p className="font-bold text-slate-900 text-base leading-snug">Ã¢Å“Â¨ {game.instruction}</p>;
-                         })()}
-                       </div>
-                    </div>
-                    <div className="w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
-                      <iframe 
-                        style={{ maxWidth: "100%" }} 
-                        src={game.embedUrl} 
-                        width="100%" 
-                        height="100%" 
-                        frameBorder="0" 
-                        allow="microphone; camera; fullscreen"
-                        allowFullScreen
-                        className="absolute inset-0 w-full h-full"
-                      ></iframe>
-                    </div>
+         <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white shadow-md">
+                <span className="font-bold text-sm">3</span>
+              </div>
+              <h2 className="text-2xl font-bold text-slate-800 uppercase flex items-center gap-2">
+                Play <Gamepad2 size={20} className="text-amber-500 fill-amber-500" />
+              </h2>
+            </div>
+            {games && games.length > 0 ? (
+              <div className="flex flex-col gap-8">
+                {games.map((game, idx) => (
+                  <div key={idx} className="bg-white rounded-[2rem] p-4 lg:p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
+                     <div>
+                       <h3 className="text-xl font-bold text-slate-700">{game.title}</h3>
+                        <div className="mt-2 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
+                          {(() => {
+                            const match = game.instruction.match(/^(.*?)(\(.*\))$/);
+                            if (match) {
+                              return (
+                                <div className="flex flex-col gap-1.5">
+                                  <p className="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                                    <Sparkles size={18} className="text-amber-500 fill-amber-500" /> INSTRUCTION: {match[1].trim()}
+                                  </p>
+                                  <p className="font-medium text-orange-500 text-sm italic">{match[2]}</p>
+                                </div>
+                              );
+                            }
+                            return (
+                              <p className="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                                <Sparkles size={18} className="text-amber-500 fill-amber-500" /> {game.instruction}
+                              </p>
+                            );
+                          })()}
+                        </div>
+                     </div>
+                     <div className="w-full aspect-[3/4] sm:aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden bg-slate-100 relative shadow-inner">
+                       <iframe 
+                         style={{ maxWidth: "100%" }} 
+                         src={game.embedUrl} 
+                         width="100%" 
+                         height="100%" 
+                         frameBorder="0" 
+                         allow="microphone; camera; fullscreen"
+                         allowFullScreen
+                         className="absolute inset-0 w-full h-full"
+                       ></iframe>
+                     </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-[2rem] p-6 lg:p-10 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center min-h-[300px] border-dashed border-2">
+                 <div className="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                   <Gamepad2 size={40} className="text-amber-400" />
                  </div>
-               ))}
-             </div>
-           ) : (
-             <div className="bg-white rounded-[2rem] p-6 lg:p-10 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center min-h-[300px] border-dashed border-2">
-                <div className="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mb-4">
-                  <Gamepad2 size={40} className="text-amber-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-700 mb-2">Interactive Game</h3>
-                <p className="text-slate-500 max-w-sm">The game module for this mission is currently in development. It will be available soon!</p>
-             </div>
-           )}
-        </section>
-
+                 <h3 className="text-2xl font-bold text-slate-700 mb-2">Interactive Game</h3>
+                 <p className="text-slate-500 max-w-sm">The game module for this mission is currently in development. It will be available soon!</p>
+              </div>
+            )}
+         </section>
+ 
         {/* 4. CHALLENGE */}
         <section>
            <div className="flex items-center gap-3 mb-6">
@@ -342,7 +346,9 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
             {/* Challenge Instruction Box */}
             <div className="mb-4 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
               <div className="flex flex-col gap-1.5">
-                <p className="font-bold text-slate-900 text-base leading-snug">✨ INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!</p>
+                <p className="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                  <Sparkles size={18} className="text-blue-600 fill-blue-600" /> INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!
+                </p>
                 <p className="font-medium text-blue-600 text-sm italic">(Saat memulai kuis, pastikan kamu mengizinkan akses mikrofon di browsermu agar suaramu bisa terekam dengan baik, ya!)</p>
               </div>
             </div>
@@ -411,8 +417,8 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                 </h3>
                 <p className="text-slate-600 max-w-md mx-auto mb-8">
                   {alreadyClaimed 
-                    ? "YouÃ¢â‚¬â„¢ve done a great job on this mission! Your testimonial is now featured on the homepage." 
-                    : "After watching the video, learning the vocabulary, and completing the quiz above, itÃ¢â‚¬â„¢s time to claim your prize."}
+                    ? "You've done a great job on this mission! Your testimonial is now featured on the homepage." 
+                    : "After watching the video, learning the vocabulary, and completing the quiz above, it's time to claim your prize."}
                 </p>
                 
                 <button 
@@ -436,7 +442,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
            </div>
         </section>
 
-        {/* 6. NEXT LEVEL / COMPLETION BANNER Ã¢â‚¬â€ only shown after testimonial is claimed */}
+        {/* 6. NEXT LEVEL / COMPLETION BANNER — only shown after testimonial is claimed */}
         <AnimatePresence>
           {alreadyClaimed && nextLevel && nextLevelHref && (
             <motion.section
@@ -471,7 +477,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
           )}
         </AnimatePresence>
 
-        {/* 6b. HARD COMPLETION Ã¢â‚¬â€ only shown after testimonial is claimed */}
+        {/* 6b. HARD COMPLETION — only shown after testimonial is claimed */}
         <AnimatePresence>
           {alreadyClaimed && level === "Hard" && !nextLevel && (
             <motion.section
@@ -491,24 +497,24 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                     transition={{ type: "spring", delay: 0.2, bounce: 0.5 }}
                     className="w-24 h-24 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mb-6 shadow-xl"
                   >
-                    <span className="text-5xl">Ã°Å¸Ââ€ </span>
+                    <span className="text-5xl">🏆</span>
                   </motion.div>
-                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">You&apos;re a SHINING Champion! Ã°Å¸Å½â€°</h3>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-3">You&apos;re a SHINING Champion! 🎉</h3>
                   <p className="text-white/90 text-lg max-w-lg mx-auto mb-8">
-                    Luar biasa! Kamu telah menyelesaikan <strong>semua level</strong> di SHINING Ã¢â‚¬â€ Easy, Medium, dan Hard. Kamu adalah bintang yang sesungguhnya! Ã¢Â­Â
+                    Luar biasa! Kamu telah menyelesaikan <strong>semua level</strong> di SHINING — Easy, Medium, dan Hard. Kamu adalah bintang yang sesungguhnya! ⭐
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/music-map"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-white text-shining-dark rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg"
                     >
-                      Ã°Å¸â€”ÂºÃ¯Â¸Â Back to Music Map
+                      🗺️ Back to Music Map
                     </Link>
                     <Link
                       href="/"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-white/20 border border-white/30 text-white rounded-full font-bold text-lg hover:scale-105 hover:bg-white/30 transition-all"
                     >
-                      Ã°Å¸ÂÂ  Back to Home
+                      🏠 Back to Home
                     </Link>
                   </div>
                 </div>
@@ -676,4 +682,5 @@ function GiftIcon() {
     </svg>
   );
 }
+
 
