@@ -375,12 +375,18 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                  <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0px", minHeight: "635px", background: "#fff", borderRadius: "1.5rem", overflow: "hidden" }}>
                    <div style={{ padding: "8px 16px", background: "#fff", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #f1f5f9", borderRadius: "1.5rem 1.5rem 0 0" }}>
                      <span style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 500 }}>Wayground Challenge</span>
-                     <button
-                       onClick={handleQuizFullscreen}
-                       style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#3b82f6", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
-                     >
-                       {isQuizFullscreen ? "â›¶ Exit Fullscreen" : "â›¶ Start in fullscreen mode"}
-                     </button>
+                      <button
+                        onClick={handleQuizFullscreen}
+                        style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#3b82f6", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          {isQuizFullscreen
+                            ? <><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></>
+                            : <><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></>
+                          }
+                        </svg>
+                        {isQuizFullscreen ? "Exit Fullscreen" : "Start in fullscreen mode"}
+                      </button>
                    </div>
                    <iframe
                      src={quizEmbedUrl}
