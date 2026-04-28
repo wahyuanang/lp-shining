@@ -91,7 +91,7 @@ export default function MediumMission() {
       songTitle="Count On Me"
       youtubeId="V-ivEAzBiXI"
       vocabulary={mediumVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=118925"
+      quizEmbedUrl="https://wayground.com/join?gc=422051"
       lyrics={mediumLyrics}
       games={mediumGames}
       nextLevel="Hard"
