@@ -75,7 +75,7 @@ export default function EasyMission() {
       songTitle="This Is The Way We Make Friends"
       youtubeId="AT8qLCmseuE"
       vocabulary={makefriendsVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=15825889"
+      quizEmbedUrl="https://wayground.com/join?gc=659367"
       lyrics={makefriendscLyrics}
       games={makefriendsGames}
       nextLevel="Medium"
