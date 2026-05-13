@@ -119,7 +119,7 @@ export default function HardMission() {
       songTitle="A Million Dreams"
       youtubeId="a8WCktJkLlY"
       vocabulary={hardVocab}
-      quizEmbedUrl="https://wayground.com/join?gc=991541"
+      quizEmbedUrl="https://wayground.com/join?gc=64584673"
       lyrics={millionDreamsLyrics}
       games={hardGames}
     />
