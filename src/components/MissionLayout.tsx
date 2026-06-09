@@ -347,7 +347,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
             <div className="mb-4 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
               <div className="flex flex-col gap-1.5">
                 <p className="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
-                  <Sparkles size={18} className="text-[#6b1443] fill-[#6b1443]" /> INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!
+                  <Sparkles size={18} className="text-amber-500 fill-amber-500" /> INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!
                 </p>
                 <p className="font-medium text-[#6b1443] text-sm italic">(Saat memulai kuis, pastikan kamu mengizinkan akses mikrofon di browsermu agar suaramu bisa terekam dengan baik, ya!)</p>
               </div>
@@ -380,7 +380,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                      allowFullScreen>
                    </iframe>
                    <div className="bg-white py-2 text-center text-sm border-t">
-                      <a href="https://wayground.com/admin?source=embedFrame" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">Explore more at Wayground.</a>
+                      <a href="https://wayground.com/admin?source=embedFrame" target="_blank" rel="noreferrer" className="text-[#6b1443] hover:underline">Explore more at Wayground.</a>
                    </div>
                  </div>
                ) : (
