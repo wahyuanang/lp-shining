@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, BookOpen, Gamepad2, Trophy, Star, Sparkles, CheckCircle2, ChevronLeft, X, PartyPopper, ArrowRight } from "lucide-react";
@@ -335,11 +335,11 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
         {/* 4. CHALLENGE */}
         <section>
            <div className="flex items-center gap-3 mb-6">
-             <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+             <div className="w-10 h-10 rounded-full bg-[#6b1443] flex items-center justify-center text-white shadow-md">
                <span className="font-bold text-sm">4</span>
              </div>
              <h2 className="text-2xl font-bold text-slate-800 uppercase flex items-center gap-2">
-               Challenge <Trophy size={20} className="text-blue-600 fill-blue-600" />
+               Challenge <Trophy size={20} className="text-[#6b1443] fill-[#6b1443]" />
              </h2>
            </div>
            
@@ -347,9 +347,9 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
             <div className="mb-4 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100">
               <div className="flex flex-col gap-1.5">
                 <p className="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
-                  <Sparkles size={18} className="text-blue-600 fill-blue-600" /> INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!
+                  <Sparkles size={18} className="text-[#6b1443] fill-[#6b1443]" /> INSTRUCTION: When starting the quiz, make sure to allow microphone access on your browser so your voice can be recorded!
                 </p>
-                <p className="font-medium text-blue-600 text-sm italic">(Saat memulai kuis, pastikan kamu mengizinkan akses mikrofon di browsermu agar suaramu bisa terekam dengan baik, ya!)</p>
+                <p className="font-medium text-[#6b1443] text-sm italic">(Saat memulai kuis, pastikan kamu mengizinkan akses mikrofon di browsermu agar suaramu bisa terekam dengan baik, ya!)</p>
               </div>
             </div>
 
@@ -360,7 +360,7 @@ export default function MissionLayout({ level, songTitle, youtubeId, vocabulary,
                      <span style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 500 }}>Wayground Challenge</span>
                       <button
                         onClick={handleQuizFullscreen}
-                        style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#3b82f6", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
+                        style={{ display: "flex", alignItems: "center", gap: "6px", padding: "6px 14px", borderRadius: "9999px", background: "#6b1443", color: "#fff", fontSize: "13px", fontWeight: 600, border: "none", cursor: "pointer" }}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           {isQuizFullscreen
